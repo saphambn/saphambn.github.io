@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-label="MetalLB chế độ L2">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1200" height="640" fill="#FFFFFF"/>
+<text x="40.0" y="52.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="bold" fill="#0F172A" text-anchor="start">MetalLB chế độ L2: ai trả lời ARP cho VIP?</text>
+<text x="40.0" y="80.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#475569" text-anchor="start">Một speaker được bầu làm chủ VIP và trả lời ARP bằng MAC của node mình · các node khác đứng chờ</text>
+<line x1="40" y1="330" x2="1160" y2="330" stroke="#2563EB" stroke-width="7" stroke-linecap="round"/>
+<text x="40.0" y="360.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E40AF" text-anchor="start">br-host · 10.0.0.0/24 · enp3s0</text>
+<rect x="40.0" y="120.0" width="190.0" height="96.0" rx="12" fill="#E2E8F0" stroke="#64748B" stroke-width="2"/>
+<text x="135.0" y="152.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">Client</text>
+<text x="135.0" y="176.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">deployer 10.0.0.54</text>
+<text x="135.0" y="198.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">→ https://…:443</text>
+<line x1="135.0" y1="216.0" x2="135.0" y2="324.0" stroke="#64748B" stroke-width="2.2"/>
+<rect x="150.0" y="236.0" width="250.0" height="30.0" rx="15" fill="#FFFFFF" stroke="#64748B" stroke-width="1.4"/>
+<text x="275.0" y="256.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">ARP: who-has 10.0.0.200?</text>
+<line x1="380.0" y1="336.0" x2="380.0" y2="400.0" stroke="#16A34A" stroke-width="2.2"/>
+<circle cx="380.0" cy="330" r="5.5" fill="#FFFFFF" stroke="#16A34A" stroke-width="2.4"/>
+<rect x="300.0" y="400.0" width="160.0" height="130.0" rx="12" fill="#DCFCE7" stroke="#16A34A" stroke-width="3"/>
+<text x="380.0" y="428.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">controller-1</text>
+<text x="380.0" y="452.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#166534" text-anchor="middle">speaker: CHỦ VIP</text>
+<text x="380.0" y="482.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="middle">kube-ipvs0:</text>
+<text x="380.0" y="500.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="middle">10.0.0.200/32</text>
+<text x="380.0" y="520.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">(strictARP: im lặng)</text>
+<line x1="560.0" y1="336.0" x2="560.0" y2="400.0" stroke="#DC2626" stroke-width="2.2"/>
+<circle cx="560.0" cy="330" r="5.5" fill="#FFFFFF" stroke="#DC2626" stroke-width="2.4"/>
+<rect x="480.0" y="400.0" width="160.0" height="130.0" rx="12" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+<text x="560.0" y="428.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">controller-2</text>
+<text x="560.0" y="452.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#991B1B" text-anchor="middle">speaker: dự phòng</text>
+<text x="560.0" y="482.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="middle">kube-ipvs0:</text>
+<text x="560.0" y="500.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="middle">10.0.0.200/32</text>
+<text x="560.0" y="520.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">(strictARP: im lặng)</text>
+<line x1="740.0" y1="336.0" x2="740.0" y2="400.0" stroke="#DC2626" stroke-width="2.2"/>
+<circle cx="740.0" cy="330" r="5.5" fill="#FFFFFF" stroke="#DC2626" stroke-width="2.4"/>
+<rect x="660.0" y="400.0" width="160.0" height="130.0" rx="12" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+<text x="740.0" y="428.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">controller-3</text>
+<text x="740.0" y="452.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#991B1B" text-anchor="middle">speaker: dự phòng</text>
+<text x="740.0" y="482.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="middle">kube-ipvs0:</text>
+<text x="740.0" y="500.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="middle">10.0.0.200/32</text>
+<text x="740.0" y="520.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">(strictARP: im lặng)</text>
+<line x1="920.0" y1="336.0" x2="920.0" y2="400.0" stroke="#9333EA" stroke-width="2.2"/>
+<circle cx="920.0" cy="330" r="5.5" fill="#FFFFFF" stroke="#9333EA" stroke-width="2.4"/>
+<rect x="840.0" y="400.0" width="160.0" height="130.0" rx="12" fill="#F3E8FF" stroke="#9333EA" stroke-width="2"/>
+<text x="920.0" y="428.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">compute-1</text>
+<text x="920.0" y="452.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#6B21A8" text-anchor="middle">không announce</text>
+<text x="920.0" y="482.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="middle">kube-ipvs0:</text>
+<text x="920.0" y="500.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="middle">10.0.0.200/32</text>
+<text x="920.0" y="520.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">(strictARP: im lặng)</text>
+<line x1="1100.0" y1="336.0" x2="1100.0" y2="400.0" stroke="#9333EA" stroke-width="2.2"/>
+<circle cx="1100.0" cy="330" r="5.5" fill="#FFFFFF" stroke="#9333EA" stroke-width="2.4"/>
+<rect x="1020.0" y="400.0" width="160.0" height="130.0" rx="12" fill="#F3E8FF" stroke="#9333EA" stroke-width="2"/>
+<text x="1100.0" y="428.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="middle">compute-2</text>
+<text x="1100.0" y="452.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#6B21A8" text-anchor="middle">không announce</text>
+<text x="1100.0" y="482.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="middle">kube-ipvs0:</text>
+<text x="1100.0" y="500.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="middle">10.0.0.200/32</text>
+<text x="1100.0" y="520.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">(strictARP: im lặng)</text>
+<rect x="400.0" y="280.0" width="360.0" height="30.0" rx="15" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.6"/>
+<text x="580.0" y="300.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#166534" text-anchor="middle">ARP reply: 10.0.0.200 is-at MAC(controller-1)</text>
+<line x1="384.0" y1="318.0" x2="402.0" y2="300.0" stroke="#16A34A" stroke-width="1.6"/>
+<path d="M380.0,396 L380.0,338" fill="none" stroke="#16A34A" stroke-width="2.6" marker-end="url(#arr)"/>
+<text x="860.0" y="150.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#475569" text-anchor="start">Compute không announce vì</text>
+<text x="860.0" y="172.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="start">L2Advertisement chỉ chọn node</text>
+<text x="860.0" y="194.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="start">có label worker (3 controller).</text>
+<text x="860.0" y="222.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#475569" text-anchor="start">Controller chết → speaker khác</text>
+<text x="860.0" y="244.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="start">nhận VIP, gửi gratuitous ARP.</text>
+<text x="40.0" y="578.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">Mọi node đều gắn VIP lên kube-ipvs0 (IPVS) – strictARP ngăn chúng tự trả lời ARP, để chỉ speaker được bầu làm việc đó.</text>
+<text x="40.0" y="604.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#475569" text-anchor="start">Speaker liên lạc với nhau qua memberlist (TCP/UDP 7946) để thống nhất node nào giữ VIP nào.</text>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="Các object đưa API ra ngoài qua Envoy Gateway">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1200" height="720" fill="#FFFFFF"/>
+<text x="40.0" y="52.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="bold" fill="#0F172A" text-anchor="start">Các object đưa một API ra ngoài qua Envoy Gateway</text>
+<text x="40.0" y="80.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#475569" text-anchor="start">Ví dụ với Keystone · mỗi service OpenStack có một listener HTTPS và một HTTPRoute riêng</text>
+<rect x="40.0" y="120.0" width="330.0" height="120.0" rx="12" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+<text x="56.0" y="144.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#92400E" text-anchor="start">cert-manager · ClusterIssuer</text>
+<text x="56.0" y="168.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">flex-gateway-issuer</text>
+<text x="56.0" y="192.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">self-signed (mặc định của Genestack)</text>
+<text x="56.0" y="212.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">hoặc letsencrypt-prod khi có --email</text>
+<rect x="40.0" y="290.0" width="330.0" height="120.0" rx="12" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+<text x="56.0" y="314.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#92400E" text-anchor="start">Certificate → Secret</text>
+<text x="56.0" y="338.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">keystone-gw-tls-secret</text>
+<text x="56.0" y="362.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">ns envoy-gateway</text>
+<text x="56.0" y="382.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">SAN: keystone.api.&lt;domain&gt;</text>
+<rect x="430.0" y="120.0" width="340.0" height="290.0" rx="12" fill="#CCFBF1" stroke="#0D9488" stroke-width="2"/>
+<text x="446.0" y="144.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#115E59" text-anchor="start">Gateway (Gateway API)</text>
+<text x="446.0" y="168.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">flex-gateway</text>
+<text x="446.0" y="192.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">ns envoy-gateway · class eg</text>
+<text x="446.0" y="212.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">annotation cluster-issuer</text>
+<text x="446.0" y="232.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">listener keystone-https:</text>
+<text x="446.0" y="252.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">  hostname keystone.api.&lt;domain&gt;</text>
+<text x="446.0" y="272.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">  port 443 · TLS Terminate</text>
+<text x="446.0" y="292.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">  cert: keystone-gw-tls-secret</text>
+<text x="446.0" y="312.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">… + 1 listener cho mỗi service</text>
+<rect x="830.0" y="120.0" width="330.0" height="120.0" rx="12" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+<text x="846.0" y="144.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E40AF" text-anchor="start">Envoy Gateway controller</text>
+<text x="846.0" y="168.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">envoy-gateway</text>
+<text x="846.0" y="192.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">ns envoyproxy-gateway-system</text>
+<text x="846.0" y="212.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">đọc Gateway/HTTPRoute, cấu hình proxy</text>
+<rect x="830.0" y="290.0" width="330.0" height="120.0" rx="12" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+<text x="846.0" y="314.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E40AF" text-anchor="start">Envoy proxy (Deployment + Service)</text>
+<text x="846.0" y="338.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">envoy-…-flex-gateway</text>
+<text x="846.0" y="362.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">replicas 2 · LoadBalancer</text>
+<text x="846.0" y="382.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">pool gateway-api-external → 10.0.0.200</text>
+<rect x="430.0" y="470.0" width="340.0" height="140.0" rx="12" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+<text x="446.0" y="494.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#991B1B" text-anchor="start">HTTPRoute</text>
+<text x="446.0" y="518.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">custom-keystone-gateway-route</text>
+<text x="446.0" y="542.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">ns openstack</text>
+<text x="446.0" y="562.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">sectionName keystone-https</text>
+<text x="446.0" y="582.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">→ backendRef keystone-api:5000</text>
+<rect x="40.0" y="470.0" width="330.0" height="140.0" rx="12" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+<text x="56.0" y="494.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#991B1B" text-anchor="start">Service OpenStack</text>
+<text x="56.0" y="518.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">keystone-api</text>
+<text x="56.0" y="542.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">ns openstack · ClusterIP</text>
+<text x="56.0" y="562.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">port 5000</text>
+<text x="56.0" y="582.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">do chart Keystone tạo</text>
+<rect x="830.0" y="470.0" width="330.0" height="140.0" rx="12" fill="#DCFCE7" stroke="#16A34A" stroke-width="2"/>
+<text x="846.0" y="494.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#166534" text-anchor="start">MetalLB</text>
+<text x="846.0" y="518.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">IPAddressPool</text>
+<text x="846.0" y="542.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">gateway-api-external 10.0.0.200/32</text>
+<text x="846.0" y="562.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">autoAssign: false</text>
+<text x="846.0" y="582.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">L2Advertisement · enp3s0</text>
+<line x1="205.0" y1="240.0" x2="205.0" y2="284.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<text x="215.0" y="266.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">cấp cert</text>
+<line x1="374.0" y1="350.0" x2="426.0" y2="350.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<text x="380.0" y="340.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">TLS</text>
+<path d="M430,175 C400,175 400,180 374,180" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<text x="376.0" y="166.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">annotation</text>
+<line x1="826.0" y1="180.0" x2="774.0" y2="180.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<text x="782.0" y="170.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">watch</text>
+<line x1="995.0" y1="240.0" x2="995.0" y2="284.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<text x="1005.0" y="266.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">tạo</text>
+<line x1="995.0" y1="466.0" x2="995.0" y2="414.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<text x="1005.0" y="446.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">cấp VIP</text>
+<line x1="600.0" y1="466.0" x2="600.0" y2="414.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<text x="610.0" y="446.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">gắn vào listener</text>
+<line x1="426.0" y1="540.0" x2="374.0" y2="540.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<text x="380.0" y="530.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">chuyển tới</text>
+<text x="40.0" y="660.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">Request tới https://keystone.api.&lt;domain&gt; → VIP 10.0.0.200 → Envoy proxy chọn listener theo SNI → HTTPRoute → keystone-api:5000.</text>
+<text x="40.0" y="686.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#475569" text-anchor="start">Tất cả listener, route và hostname được setup-envoy-gateway.sh sinh từ template, thay your.domain.tld bằng --domain.</text>
+</svg>

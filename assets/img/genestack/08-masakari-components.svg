@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-label="Masakari: phát hiện lỗi và phục hồi VM">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1200" height="680" fill="#FFFFFF"/>
+<text x="40.0" y="52.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="bold" fill="#0F172A" text-anchor="start">Masakari: phát hiện lỗi và phục hồi VM</text>
+<text x="40.0" y="80.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#475569" text-anchor="start">Ba loại monitor trên compute gửi notification · engine phục hồi qua Nova API</text>
+<rect x="40.0" y="106.0" width="520.0" height="400.0" rx="14" fill="#FCFAFF" stroke="#9333EA" stroke-width="2"/>
+<text x="58.0" y="132.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#6B21A8" text-anchor="start">Compute node · DaemonSet (openstack-compute-node)</text>
+<rect x="56.0" y="150.0" width="488.0" height="102.0" rx="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.6"/>
+<text x="72.0" y="174.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">masakari-host-monitor</text>
+<text x="72.0" y="198.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#991B1B" text-anchor="start">Lỗi cả host</text>
+<text x="72.0" y="220.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">Hỏi Kubernetes API trạng thái node compute</text>
+<text x="72.0" y="240.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">30 s × 3 mẫu · hostNetwork</text>
+<rect x="56.0" y="266.0" width="488.0" height="102.0" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="1.6"/>
+<text x="72.0" y="290.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">masakari-instance-monitor</text>
+<text x="72.0" y="314.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#92400E" text-anchor="start">Tiến trình QEMU chết</text>
+<text x="72.0" y="336.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">Nghe sự kiện từ libvirt</text>
+<text x="72.0" y="356.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">→ hard reboot VM</text>
+<rect x="56.0" y="382.0" width="488.0" height="102.0" rx="10" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.6"/>
+<text x="72.0" y="406.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">masakari-introspective-…</text>
+<text x="72.0" y="430.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#115E59" text-anchor="start">Hệ điều hành trong VM treo</text>
+<text x="72.0" y="452.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">Heartbeat qua QEMU guest agent</text>
+<text x="72.0" y="472.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">→ tắt rồi bật lại VM</text>
+<rect x="640.0" y="106.0" width="520.0" height="400.0" rx="14" fill="#F5F9FF" stroke="#2563EB" stroke-width="2"/>
+<text x="658.0" y="132.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#1E40AF" text-anchor="start">Control plane · namespace openstack</text>
+<rect x="656.0" y="150.0" width="488.0" height="62.0" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.6"/>
+<text x="672.0" y="176.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">masakari-api</text>
+<text x="672.0" y="198.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">nhận notification, quản lý segment/host</text>
+<rect x="656.0" y="236.0" width="488.0" height="62.0" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.6"/>
+<text x="672.0" y="262.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">masakari-engine</text>
+<text x="672.0" y="284.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">chạy workflow phục hồi (taskflow)</text>
+<rect x="656.0" y="322.0" width="488.0" height="62.0" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.6"/>
+<text x="672.0" y="348.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">Nova API</text>
+<text x="672.0" y="370.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">disable compute service · evacuate · reboot</text>
+<line x1="900.0" y1="214.0" x2="900.0" y2="234.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="900.0" y1="300.0" x2="900.0" y2="320.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="656.0" y="400.0" width="488.0" height="92.0" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="1.6"/>
+<text x="672.0" y="424.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">Failover segment compute-ha</text>
+<text x="672.0" y="446.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">recovery_method: auto · host: compute-1, compute-2</text>
+<text x="672.0" y="468.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">Host phải có trong segment thì notification mới</text>
+<text x="672.0" y="486.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">được xử lý</text>
+<path d="M546,201 C600,201 600,181 652,181" fill="none" stroke="#94A3B8" stroke-width="1.6" marker-end="url(#arr)"/>
+<path d="M546,317 C600,317 600,181 652,181" fill="none" stroke="#94A3B8" stroke-width="1.6" marker-end="url(#arr)"/>
+<path d="M546,433 C600,433 600,181 652,181" fill="none" stroke="#94A3B8" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="600.0" y="100.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="middle">notification</text>
+<rect x="40.0" y="530.0" width="1120.0" height="120.0" rx="12" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+<text x="60.0" y="558.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">VM nào được phục hồi khi host chết?</text>
+<text x="60.0" y="584.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="start">evacuate_all_instances = false (mặc định của lab) → chỉ VM có metadata HA_Enabled=True</text>
+<text x="60.0" y="608.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="start">evacuate_all_instances = true → mọi VM trên host</text>
+<text x="60.0" y="634.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">VM boot từ volume (Cinder) giữ nguyên dữ liệu; VM dùng disk ephemeral được dựng lại từ image.</text>
+</svg>

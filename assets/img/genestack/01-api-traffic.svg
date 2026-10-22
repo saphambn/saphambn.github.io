@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="Đường đi của request vào API">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker><marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#D97706"/></marker></defs>
+<rect width="1200" height="560" fill="#FFFFFF"/>
+<text x="40.0" y="52.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="bold" fill="#0F172A" text-anchor="start" >Đường đi của request vào API</text>
+<text x="40.0" y="80.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#475569" text-anchor="start" >Một VIP duy nhất cho mọi API · Envoy chọn route theo hostname (SNI / Host header)</text>
+<rect x="40.0" y="190.0" width="170.0" height="120.0" rx="12" fill="#E2E8F0" stroke="#64748B" stroke-width="2"/>
+<text x="125.0" y="232.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="bold" fill="#0F172A" text-anchor="middle" >Client</text>
+<text x="125.0" y="260.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="middle" >trình duyệt / CLI</text>
+<rect x="250.0" y="190.0" width="200.0" height="120.0" rx="12" fill="#E2E8F0" stroke="#64748B" stroke-width="2"/>
+<text x="350.0" y="232.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="bold" fill="#0F172A" text-anchor="middle" >DNS hoặc /etc/hosts</text>
+<text x="350.0" y="260.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="middle" >*.api.&lt;domain&gt;</text>
+<text x="350.0" y="282.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="middle" >→ 10.0.0.200</text>
+<rect x="490.0" y="190.0" width="200.0" height="120.0" rx="12" fill="#CCFBF1" stroke="#0D9488" stroke-width="2"/>
+<text x="590.0" y="232.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="bold" fill="#0F172A" text-anchor="middle" >VIP 10.0.0.200</text>
+<text x="590.0" y="260.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="middle" >MetalLB L2</text>
+<text x="590.0" y="282.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="middle" >1 node trả lời ARP</text>
+<rect x="730.0" y="190.0" width="200.0" height="120.0" rx="12" fill="#CCFBF1" stroke="#0D9488" stroke-width="2"/>
+<text x="830.0" y="232.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="bold" fill="#0F172A" text-anchor="middle" >Envoy Gateway</text>
+<text x="830.0" y="260.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="middle" >flex-gateway</text>
+<text x="830.0" y="282.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="middle" >HTTPRoute theo hostname</text>
+<line x1="214" y1="250" x2="244" y2="250" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="454" y1="250" x2="484" y2="250" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="694" y1="250" x2="724" y2="250" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="1010.0" y="137.0" width="150.0" height="46.0" rx="8" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.6"/>
+<text x="1085.0" y="165.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="normal" fill="#0F172A" text-anchor="middle" >keystone-api</text>
+<path d="M934,250 C970,250 970,160.0 1004,160.0" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="1010.0" y="197.0" width="150.0" height="46.0" rx="8" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.6"/>
+<text x="1085.0" y="225.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="normal" fill="#0F172A" text-anchor="middle" >nova-api</text>
+<path d="M934,250 C970,250 970,220.0 1004,220.0" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="1010.0" y="257.0" width="150.0" height="46.0" rx="8" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.6"/>
+<text x="1085.0" y="285.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="normal" fill="#0F172A" text-anchor="middle" >glance-api</text>
+<path d="M934,250 C970,250 970,280.0 1004,280.0" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="1010.0" y="317.0" width="150.0" height="46.0" rx="8" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.6"/>
+<text x="1085.0" y="345.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="normal" fill="#0F172A" text-anchor="middle" >skyline</text>
+<path d="M934,250 C970,250 970,340.0 1004,340.0" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<text x="1085.0" y="123.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#475569" text-anchor="middle" >Service → Pod</text>
+<rect x="40.0" y="366.0" width="1120.0" height="150.0" rx="12" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+<text x="60.0" y="392.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="start" >Hay gây nhầm lẫn</text>
+<text x="60.0" y="422.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="bold" fill="#B91C1C" text-anchor="start" >✗  curl https://10.0.0.200</text>
+<text x="560.0" y="422.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#475569" text-anchor="start" >Bị reset sau TLS handshake: không có SNI nên Envoy không chọn được route.</text>
+<text x="60.0" y="456.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="bold" fill="#15803D" text-anchor="start" >✓  curl --resolve &lt;host&gt;:443:10.0.0.200 https://&lt;host&gt;/</text>
+<text x="560.0" y="456.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#475569" text-anchor="start" >Thử nhanh khi chưa có DNS.</text>
+<text x="60.0" y="490.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="bold" fill="#1D4ED8" text-anchor="start" >ⓘ  ping 10.0.0.200 → port unreachable</text>
+<text x="560.0" y="490.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#475569" text-anchor="start" >Bình thường với kube-proxy IPVS: VIP chỉ nhận các port của Service.</text>
+</svg>

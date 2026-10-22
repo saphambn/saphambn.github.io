@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-label="Timeline evacuate">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1200" height="470" fill="#FFFFFF"/>
+<text x="40.0" y="52.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="bold" fill="#0F172A" text-anchor="start">Timeline evacuate khi tắt một compute (lab)</text>
+<text x="40.0" y="80.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#475569" text-anchor="start">T = thời điểm host monitor gửi notification · VM boot từ volume, có HA_Enabled=True</text>
+<line x1="60.0" y1="250.0" x2="1140.0" y2="250.0" stroke="#334155" stroke-width="3"/>
+<rect x="60.0" y="130.0" width="230.0" height="92.0" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="1.6"/>
+<text x="74.0" y="154.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">Trước T: phát hiện</text>
+<text x="74.0" y="176.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">Kubernetes đánh dấu node</text>
+<text x="74.0" y="194.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">NotReady, rồi host monitor</text>
+<text x="74.0" y="212.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">cần 3 mẫu × 30 s liên tiếp</text>
+<circle cx="330.0" cy="250" r="9" fill="#DC2626"/>
+<rect x="300.0" y="132.0" width="200.0" height="90.0" rx="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.6"/>
+<text x="312.0" y="156.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="bold" fill="#991B1B" text-anchor="start">T + 0 s</text>
+<text x="312.0" y="180.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">Notification</text>
+<text x="312.0" y="202.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">COMPUTE_HOST / STOPPED</text>
+<line x1="330.0" y1="240.0" x2="330.0" y2="222.0" stroke="#DC2626" stroke-width="1.4" stroke-dasharray="3 3"/>
+<circle cx="335.3" cy="250" r="9" fill="#9333EA"/>
+<rect x="300.0" y="278.0" width="200.0" height="90.0" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="1.6"/>
+<text x="312.0" y="302.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="bold" fill="#6B21A8" text-anchor="start">T + 1 s</text>
+<text x="312.0" y="326.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">Disable nova-compute</text>
+<text x="312.0" y="348.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">trên host lỗi</text>
+<line x1="335.3" y1="260.0" x2="335.3" y2="278.0" stroke="#9333EA" stroke-width="1.4" stroke-dasharray="3 3"/>
+<circle cx="825.1" cy="250" r="9" fill="#2563EB"/>
+<rect x="725.1" y="132.0" width="200.0" height="90.0" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.6"/>
+<text x="737.1" y="156.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="bold" fill="#1E40AF" text-anchor="start">T + 94 s</text>
+<text x="737.1" y="180.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">Lock + evacuate</text>
+<text x="737.1" y="202.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">chờ Nova thấy host down</text>
+<line x1="825.1" y1="240.0" x2="825.1" y2="222.0" stroke="#2563EB" stroke-width="1.4" stroke-dasharray="3 3"/>
+<circle cx="1056.8" cy="250" r="9" fill="#16A34A"/>
+<rect x="920.0" y="278.0" width="200.0" height="90.0" rx="10" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.6"/>
+<text x="932.0" y="302.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="bold" fill="#166534" text-anchor="start">T + 138 s</text>
+<text x="932.0" y="326.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">VM ACTIVE</text>
+<text x="932.0" y="348.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">trên compute còn lại · unlock</text>
+<line x1="1056.8" y1="260.0" x2="1056.8" y2="278.0" stroke="#16A34A" stroke-width="1.4" stroke-dasharray="3 3"/>
+<text x="40.0" y="410.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">Toàn bộ quá trình phục hồi mất khoảng 2 phút 20 giây sau khi có notification.</text>
+<text x="40.0" y="436.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#475569" text-anchor="start">Sau đó host lỗi vẫn ở trạng thái disabled / on_maintenance cho tới khi người vận hành bật lại.</text>
+</svg>

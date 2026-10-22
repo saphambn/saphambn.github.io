@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-label="Bố trí ổ đĩa trên controller">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1200" height="400" fill="#FFFFFF"/>
+<text x="40.0" y="52.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="bold" fill="#0F172A" text-anchor="start">Bố trí ổ đĩa trên mỗi controller</text>
+<text x="40.0" y="80.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#475569" text-anchor="start">Root, ephemeral và swap đến từ flavor · Longhorn và Cinder LVM là volume gắn thêm</text>
+<rect x="40.0" y="120.0" width="373.7" height="70.0" rx="8" fill="#E2E8F0" stroke="#64748B" stroke-width="1.8"/>
+<text x="52.0" y="148.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="start">vda</text>
+<text x="52.0" y="172.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="start">160 GB</text>
+<rect x="419.7" y="120.0" width="297.8" height="70.0" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.8"/>
+<text x="431.7" y="148.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="start">vdb</text>
+<text x="431.7" y="172.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="start">128 GB</text>
+<rect x="723.5" y="120.0" width="80.5" height="70.0" rx="8" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.8"/>
+<text x="735.5" y="148.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="start">vdc</text>
+<text x="735.5" y="172.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="start">8 GB</text>
+<rect x="810.0" y="120.0" width="112.7" height="70.0" rx="8" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.8" stroke-dasharray="7 4"/>
+<text x="822.0" y="148.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="start">vdd</text>
+<text x="822.0" y="172.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="start">50 GB</text>
+<rect x="928.7" y="120.0" width="231.3" height="70.0" rx="8" fill="#FEF3C7" stroke="#D97706" stroke-width="1.8" stroke-dasharray="7 4"/>
+<text x="940.7" y="148.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="start">vde</text>
+<text x="940.7" y="172.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="start">100 GB</text>
+<rect x="40.0" y="217.0" width="18.0" height="18.0" rx="4" fill="#E2E8F0" stroke="#64748B" stroke-width="1.6"/>
+<text x="70.0" y="232.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">vda</text>
+<text x="120.0" y="232.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">root  /</text>
+<text x="260.0" y="232.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#475569" text-anchor="start">Hệ điều hành, container image, /var/lib/kubelet</text>
+<text x="1160.0" y="232.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="end">từ flavor</text>
+<rect x="40.0" y="247.0" width="18.0" height="18.0" rx="4" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.6"/>
+<text x="70.0" y="262.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">vdb</text>
+<text x="120.0" y="262.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">ephemeral</text>
+<text x="260.0" y="262.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#475569" text-anchor="start">Ổ tạm của flavor – không dùng cho dữ liệu quan trọng</text>
+<text x="1160.0" y="262.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="end">từ flavor</text>
+<rect x="40.0" y="277.0" width="18.0" height="18.0" rx="4" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.6"/>
+<text x="70.0" y="292.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">vdc</text>
+<text x="120.0" y="292.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">swap</text>
+<text x="260.0" y="292.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#475569" text-anchor="start">Kubespray tắt swap</text>
+<text x="1160.0" y="292.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="end">từ flavor</text>
+<rect x="40.0" y="307.0" width="18.0" height="18.0" rx="4" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.6" stroke-dasharray="4 3"/>
+<text x="70.0" y="322.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">vdd</text>
+<text x="120.0" y="322.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">Longhorn</text>
+<text x="260.0" y="322.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#475569" text-anchor="start">/var/lib/longhorn-disk2 · PVC của K8s</text>
+<text x="1160.0" y="322.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="end">volume gắn thêm</text>
+<rect x="40.0" y="337.0" width="18.0" height="18.0" rx="4" fill="#FEF3C7" stroke="#D97706" stroke-width="1.6" stroke-dasharray="4 3"/>
+<text x="70.0" y="352.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">vde</text>
+<text x="120.0" y="352.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">Cinder LVM</text>
+<text x="260.0" y="352.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#475569" text-anchor="start">VG cinder-volumes · volume của tenant</text>
+<text x="1160.0" y="352.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="end">volume gắn thêm</text>
+</svg>

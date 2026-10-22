@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Từ annotation trên node tới mạng của VM">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1200" height="700" fill="#FFFFFF"/>
+<text x="40.0" y="52.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="bold" fill="#0F172A" text-anchor="start">Từ annotation trên node tới mạng của VM</text>
+<text x="40.0" y="80.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#475569" text-anchor="start">ovn-setup biến annotation thành cấu hình OVS/OVN · Neutron dùng physnet1 để tạo mạng provider</text>
+<rect x="40.0" y="108.0" width="360.0" height="250.0" rx="12" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+<text x="56.0" y="134.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">1 · Annotation trên node</text>
+<text x="56.0" y="164.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#0F172A" text-anchor="start">ovn.openstack.org/int_bridge: br-int</text>
+<text x="56.0" y="188.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#0F172A" text-anchor="start">ovn.openstack.org/bridges: br-ex</text>
+<text x="56.0" y="212.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#0F172A" text-anchor="start">ovn.openstack.org/ports: br-ex:enp11s0</text>
+<text x="56.0" y="236.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#0F172A" text-anchor="start">ovn.openstack.org/mappings: physnet1:br-ex</text>
+<text x="56.0" y="260.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#0F172A" text-anchor="start">ovn.openstack.org/availability_zones: az1</text>
+<text x="56.0" y="284.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#0F172A" text-anchor="start">ovn.openstack.org/gateway: enabled</text>
+<text x="56.0" y="316.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#92400E" text-anchor="start">kubectl annotate nodes …</text>
+<text x="56.0" y="338.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">(mọi network node trong lab)</text>
+<rect x="440.0" y="108.0" width="320.0" height="250.0" rx="12" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+<text x="456.0" y="134.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">2 · DaemonSet ovn-setup</text>
+<text x="456.0" y="164.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#0F172A" text-anchor="start">kubectl apply -k kustomize/ovn/overlay</text>
+<text x="456.0" y="185.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start"></text>
+<text x="456.0" y="206.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">Chạy trên network node chưa có</text>
+<text x="456.0" y="227.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">label ovn.openstack.org/configured.</text>
+<text x="456.0" y="248.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start"></text>
+<text x="456.0" y="269.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">Tạo bridge, gắn port, ghi cấu hình</text>
+<text x="456.0" y="290.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">vào OVS, rồi gắn label configured.</text>
+<text x="456.0" y="311.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start"></text>
+<text x="456.0" y="332.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">Bỏ label → cấu hình lại node.</text>
+<rect x="800.0" y="108.0" width="360.0" height="250.0" rx="12" fill="#CCFBF1" stroke="#0D9488" stroke-width="2"/>
+<text x="816.0" y="134.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">3 · Kết quả trên mỗi node</text>
+<text x="816.0" y="166.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#115E59" text-anchor="start">OVS</text>
+<text x="816.0" y="184.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#0F172A" text-anchor="start">br-ex ← port enp11s0</text>
+<text x="816.0" y="206.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#115E59" text-anchor="start">ovn-bridge-mappings</text>
+<text x="816.0" y="224.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#0F172A" text-anchor="start">physnet1:br-ex</text>
+<text x="816.0" y="246.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#115E59" text-anchor="start">ovn-cms-options</text>
+<text x="816.0" y="264.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#0F172A" text-anchor="start">enable-chassis-as-gw,</text>
+<text x="816.0" y="282.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#0F172A" text-anchor="start">availability-zones=az1</text>
+<text x="816.0" y="304.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#115E59" text-anchor="start">Neutron agent</text>
+<text x="816.0" y="322.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#0F172A" text-anchor="start">OVN Controller Gateway agent</text>
+<line x1="402.0" y1="233.0" x2="436.0" y2="233.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="762.0" y1="233.0" x2="796.0" y2="233.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<text x="40.0" y="398.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" font-weight="bold" fill="#0F172A" text-anchor="start">Mạng Neutron tạo trên cấu hình đó (lab)</text>
+<rect x="40.0" y="420.0" width="170.0" height="70.0" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.6"/>
+<text x="56.0" y="446.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="start">VM</text>
+<text x="56.0" y="470.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">172.16.0.x</text>
+<rect x="250.0" y="420.0" width="260.0" height="110.0" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="1.8"/>
+<text x="266.0" y="446.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">test-net (tenant)</text>
+<text x="266.0" y="470.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">geneve · 172.16.0.0/24</text>
+<text x="266.0" y="489.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">MTU 1442</text>
+<text x="266.0" y="508.0" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">tunnel giữa các node</text>
+<rect x="550.0" y="420.0" width="230.0" height="110.0" rx="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.8"/>
+<text x="566.0" y="446.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">test-router</text>
+<text x="566.0" y="470.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">SNAT + floating IP</text>
+<text x="566.0" y="489.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">cổng ra đặt trên một</text>
+<text x="566.0" y="508.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">gateway chassis</text>
+<rect x="820.0" y="420.0" width="340.0" height="110.0" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="1.8"/>
+<text x="836.0" y="446.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">public (provider, external)</text>
+<text x="836.0" y="470.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">flat · physnet1 · MTU 1500</text>
+<text x="836.0" y="489.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">192.168.10.0/24</text>
+<text x="836.0" y="508.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">floating IP: .150 – .199</text>
+<line x1="212.0" y1="455.0" x2="246.0" y2="455.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="512.0" y1="475.0" x2="546.0" y2="475.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="782.0" y1="475.0" x2="816.0" y2="475.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<path d="M990,532 L990,566" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="820.0" y="570.0" width="340.0" height="50.0" rx="10" fill="#FFFFFF" stroke="#D97706" stroke-width="1.4"/>
+<text x="836.0" y="600.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="start">br-ex → enp11s0 → mạng vật lý</text>
+<text x="40.0" y="652.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">physnet1 là tên logic: Neutron dùng nó khi tạo mạng provider, OVN tra mapping physnet1 → br-ex trên từng node.</text>
+<text x="40.0" y="676.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="start">MTU mạng tenant = MTU vật lý − 58 byte header Geneve (1500 → 1442).</text>
+</svg>

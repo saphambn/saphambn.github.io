@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="Cinder LVM: mô hình hybrid">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1200" height="720" fill="#FFFFFF"/>
+<text x="40.0" y="52.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="bold" fill="#0F172A" text-anchor="start">Cinder LVM: mô hình hybrid</text>
+<text x="40.0" y="80.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#475569" text-anchor="start">API và scheduler chạy trong Kubernetes · cinder-volume chạy thẳng trên host như một systemd service</text>
+<rect x="40.0" y="104.0" width="1120.0" height="150.0" rx="14" fill="#F5F9FF" stroke="#2563EB" stroke-width="2"/>
+<text x="58.0" y="130.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E40AF" text-anchor="start">Trong Kubernetes · namespace openstack</text>
+<rect x="58.0" y="146.0" width="250.0" height="48.0" rx="8" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5"/>
+<text x="70.0" y="167.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">cinder-api</text>
+<text x="70.0" y="185.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">Deployment · sau Envoy Gateway</text>
+<rect x="326.0" y="146.0" width="250.0" height="48.0" rx="8" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5"/>
+<text x="338.0" y="167.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">cinder-scheduler</text>
+<text x="338.0" y="185.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">Deployment · chọn backend host</text>
+<rect x="594.0" y="146.0" width="260.0" height="48.0" rx="8" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+<text x="606.0" y="167.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">Secret cinder-etc</text>
+<text x="606.0" y="185.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">cinder.conf, backends.conf, …</text>
+<rect x="872.0" y="146.0" width="270.0" height="48.0" rx="8" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5"/>
+<text x="884.0" y="167.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">MariaDB · RabbitMQ</text>
+<text x="884.0" y="185.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">qua DNS *.svc.cluster.local</text>
+<text x="58.0" y="222.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">Lệnh tạo/xoá/gắn volume đi qua RabbitMQ tới cinder-volume của host được chọn.</text>
+<rect x="40.0" y="284.0" width="640.0" height="330.0" rx="14" fill="#FFFDF5" stroke="#D97706" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="58.0" y="310.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#92400E" text-anchor="start">Storage node (controller) · ngoài Kubernetes</text>
+<rect x="58.0" y="326.0" width="290.0" height="48.0" rx="8" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+<text x="70.0" y="347.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">cinder-volume.service</text>
+<text x="70.0" y="365.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">systemd · venv /opt/cinder</text>
+<rect x="366.0" y="326.0" width="296.0" height="48.0" rx="8" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+<text x="378.0" y="347.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">tgt.service</text>
+<text x="378.0" y="365.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">iSCSI target · port 3260</text>
+<rect x="58.0" y="386.0" width="290.0" height="48.0" rx="8" fill="#E2E8F0" stroke="#64748B" stroke-width="1.5"/>
+<text x="70.0" y="407.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">host = &lt;tên node&gt;</text>
+<text x="70.0" y="425.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">→ &lt;node&gt;@lvm-ssd-1 trong Cinder</text>
+<rect x="366.0" y="386.0" width="296.0" height="48.0" rx="8" fill="#E2E8F0" stroke="#64748B" stroke-width="1.5"/>
+<text x="378.0" y="407.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">/etc/cinder/*.conf</text>
+<text x="378.0" y="425.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">Ansible sinh từ Secret cinder-etc</text>
+<rect x="58.0" y="450.0" width="604.0" height="148.0" rx="10" fill="#FFFFFF" stroke="#D97706" stroke-width="1.5"/>
+<text x="72.0" y="474.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">Volume group cinder-volumes · /dev/vde (100 GB)</text>
+<rect x="72.0" y="488.0" width="576.0" height="96.0" rx="8" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.4"/>
+<text x="86.0" y="510.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="start">thin pool cinder-volumes-pool (~95% VG)</text>
+<rect x="86.0" y="524.0" width="172.0" height="46.0" rx="6" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.2"/>
+<text x="98.0" y="552.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#0F172A" text-anchor="start">LV volume-a 2G</text>
+<rect x="272.0" y="524.0" width="172.0" height="46.0" rx="6" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.2"/>
+<text x="284.0" y="552.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#0F172A" text-anchor="start">LV volume-b 10G</text>
+<rect x="458.0" y="524.0" width="172.0" height="46.0" rx="6" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.2"/>
+<text x="470.0" y="552.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#0F172A" text-anchor="start">LV volume-c 1G</text>
+<rect x="720.0" y="284.0" width="440.0" height="330.0" rx="14" fill="#FCFAFF" stroke="#9333EA" stroke-width="2"/>
+<text x="738.0" y="310.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#6B21A8" text-anchor="start">Compute node</text>
+<rect x="738.0" y="326.0" width="404.0" height="48.0" rx="8" fill="#F3E8FF" stroke="#9333EA" stroke-width="1.5"/>
+<text x="750.0" y="347.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">nova-compute + libvirt</text>
+<text x="750.0" y="365.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">pod (DaemonSet) · conf.enable_iscsi: true</text>
+<rect x="738.0" y="386.0" width="404.0" height="48.0" rx="8" fill="#F3E8FF" stroke="#9333EA" stroke-width="1.5"/>
+<text x="750.0" y="407.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">iscsid (host)</text>
+<text x="750.0" y="425.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">iSCSI initiator · open-iscsi</text>
+<rect x="738.0" y="446.0" width="404.0" height="48.0" rx="8" fill="#E2E8F0" stroke="#64748B" stroke-width="1.5"/>
+<text x="750.0" y="467.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">/dev/sdX → disk của VM</text>
+<text x="750.0" y="485.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">block device sau khi login iSCSI</text>
+<text x="738.0" y="530.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="start">Volume type lvm-ssd</text>
+<text x="738.0" y="550.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">  extra spec volume_backend_name=lvm-ssd</text>
+<text x="738.0" y="572.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">→ pool gồm mọi host khai báo backend</text>
+<text x="738.0" y="592.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">   lvm-ssd (không phải replica)</text>
+<path d="M450,200 C450,262 200,262 200,322" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arr)"/>
+<text x="58.0" y="280.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">RPC qua RabbitMQ</text>
+<path d="M724,196 L724,262 L698,262 L698,410 L668,410" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+<text x="734.0" y="250.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">playbook đọc rồi ghi ra host</text>
+<path d="M736,410 C714,410 714,350 668,350" fill="none" stroke="#9333EA" stroke-width="2.2" marker-end="url(#arr)"/>
+<text x="560.0" y="300.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#6B21A8" text-anchor="start">iSCSI :3260 ←</text>
+<text x="40.0" y="652.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">Mạng iSCSI: target_ip_address lấy từ storage_network_interface (lab: enp3s0, mạng br-host).</text>
+<text x="40.0" y="678.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#475569" text-anchor="start">Mỗi volume chỉ nằm trên một storage node – LVM không replicate. Node chết thì volume trên node đó không truy cập được.</text>
+</svg>

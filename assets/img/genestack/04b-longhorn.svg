@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Longhorn: volume, engine và replica">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1200" height="700" fill="#FFFFFF"/>
+<text x="40.0" y="52.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="bold" fill="#0F172A" text-anchor="start">Longhorn: volume, engine và replica</text>
+<text x="40.0" y="80.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#475569" text-anchor="start">StorageClass general: 2 replica trên 2 node khác nhau · general-multi-attach: thêm share-manager làm NFS server</text>
+<rect x="40.0" y="110.0" width="360.0" height="470.0" rx="14" fill="#FAFAFA" stroke="#94A3B8" stroke-width="1.8"/>
+<text x="58.0" y="140.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16.5" font-weight="bold" fill="#0F172A" text-anchor="start">controller-1</text>
+<rect x="56.0" y="506.0" width="328.0" height="58.0" rx="8" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.4"/>
+<text x="70.0" y="530.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#0F172A" text-anchor="start">/var/lib/longhorn/</text>
+<text x="70.0" y="550.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#0F172A" text-anchor="start">/var/lib/longhorn-disk2  (ổ riêng)</text>
+<rect x="420.0" y="110.0" width="360.0" height="470.0" rx="14" fill="#FAFAFA" stroke="#94A3B8" stroke-width="1.8"/>
+<text x="438.0" y="140.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16.5" font-weight="bold" fill="#0F172A" text-anchor="start">controller-2</text>
+<rect x="436.0" y="506.0" width="328.0" height="58.0" rx="8" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.4"/>
+<text x="450.0" y="530.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#0F172A" text-anchor="start">/var/lib/longhorn/</text>
+<text x="450.0" y="550.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#0F172A" text-anchor="start">/var/lib/longhorn-disk2  (ổ riêng)</text>
+<rect x="800.0" y="110.0" width="360.0" height="470.0" rx="14" fill="#FAFAFA" stroke="#94A3B8" stroke-width="1.8"/>
+<text x="818.0" y="140.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16.5" font-weight="bold" fill="#0F172A" text-anchor="start">controller-3</text>
+<rect x="816.0" y="506.0" width="328.0" height="58.0" rx="8" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.4"/>
+<text x="830.0" y="530.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#0F172A" text-anchor="start">/var/lib/longhorn/</text>
+<text x="830.0" y="550.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#0F172A" text-anchor="start">/var/lib/longhorn-disk2  (ổ riêng)</text>
+<rect x="56.0" y="160.0" width="328.0" height="50.0" rx="8" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5"/>
+<text x="70.0" y="182.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">Pod mariadb-cluster-0</text>
+<text x="70.0" y="200.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">mount PVC storage-mariadb-cluster-0 (RWO)</text>
+<rect x="56.0" y="230.0" width="328.0" height="50.0" rx="8" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5"/>
+<text x="70.0" y="252.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">Engine (instance-manager)</text>
+<text x="70.0" y="270.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">block device cho pod, ghi đồng bộ tới replica</text>
+<line x1="220.0" y1="210.0" x2="220.0" y2="228.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="56.0" y="410.0" width="328.0" height="50.0" rx="8" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+<text x="70.0" y="432.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">Replica A</text>
+<text x="70.0" y="450.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">dataLocality: best-effort → cùng node với pod</text>
+<path d="M220.0,280 L220.0,408" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="436.0" y="410.0" width="328.0" height="50.0" rx="8" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+<text x="450.0" y="432.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">Replica B</text>
+<text x="450.0" y="450.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">bản sao đồng bộ trên node khác</text>
+<path d="M384,260 C460,260 460,340 540,408" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#arr)"/>
+<text x="434.0" y="378.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">ghi qua mạng</text>
+<rect x="816.0" y="160.0" width="328.0" height="70.0" rx="8" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="830.0" y="184.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">share-manager (volume RWX)</text>
+<text x="830.0" y="204.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">NFS server cho glance-images</text>
+<text x="830.0" y="220.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">mọi pod glance-api mount qua NFS</text>
+<rect x="816.0" y="250.0" width="328.0" height="70.0" rx="8" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2"/>
+<text x="830.0" y="274.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">Chỉ chạy trên node có label</text>
+<text x="830.0" y="294.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#0F172A" text-anchor="start">longhorn.io/storage-node=enabled</text>
+<text x="830.0" y="312.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">(cả pod hệ thống do Longhorn tự tạo)</text>
+<text x="40.0" y="618.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">Mất một node: volume vẫn đọc/ghi được từ replica còn lại, Longhorn dựng lại replica thứ hai ở node khác.</text>
+<text x="40.0" y="644.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#475569" text-anchor="start">Dung lượng thực dùng = kích thước PVC × số replica. Ví dụ PVC 10 GiB với 2 replica chiếm 20 GiB trên đĩa.</text>
+</svg>

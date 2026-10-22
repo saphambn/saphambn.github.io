@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-label="Các dịch vụ giữ state của OpenStack">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1200" height="700" fill="#FFFFFF"/>
+<text x="40.0" y="52.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="bold" fill="#0F172A" text-anchor="start">Các dịch vụ giữ state của OpenStack</text>
+<text x="40.0" y="80.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#475569" text-anchor="start">Mỗi dịch vụ chạy 3 replica, mỗi controller một pod · service OpenStack kết nối qua DNS của Service</text>
+<rect x="40.0" y="110.0" width="1120.0" height="250.0" rx="14" fill="#FFFBFB" stroke="#DC2626" stroke-width="2"/>
+<text x="60.0" y="140.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="bold" fill="#0F172A" text-anchor="start">MariaDB Galera · mariadb-operator</text>
+<rect x="60.0" y="160.0" width="230.0" height="74.0" rx="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.6"/>
+<text x="74.0" y="184.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">mariadb-cluster-0</text>
+<text x="74.0" y="204.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">controller-1 · PVC 10 GiB</text>
+<text x="74.0" y="222.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#991B1B" text-anchor="start">replica Galera</text>
+<rect x="310.0" y="160.0" width="230.0" height="74.0" rx="10" fill="#DCFCE7" stroke="#16A34A" stroke-width="2.4"/>
+<text x="324.0" y="184.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">mariadb-cluster-1</text>
+<text x="324.0" y="204.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">controller-3 · PVC 10 GiB</text>
+<text x="324.0" y="222.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#166534" text-anchor="start">PRIMARY (nhận ghi)</text>
+<rect x="560.0" y="160.0" width="230.0" height="74.0" rx="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.6"/>
+<text x="574.0" y="184.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">mariadb-cluster-2</text>
+<text x="574.0" y="204.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">controller-2 · PVC 10 GiB</text>
+<text x="574.0" y="222.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#991B1B" text-anchor="start">replica Galera</text>
+<line x1="292.0" y1="197.0" x2="308.0" y2="197.0" stroke="#DC2626" stroke-width="1.6" stroke-dasharray="4 3"/>
+<line x1="542.0" y1="197.0" x2="558.0" y2="197.0" stroke="#DC2626" stroke-width="1.6" stroke-dasharray="4 3"/>
+<text x="60.0" y="264.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">Đồng bộ Galera qua Service headless mariadb-cluster-internal (port 4567/4568/4444)</text>
+<text x="60.0" y="288.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="start">mariadb-cluster-primary</text>
+<text x="320.0" y="288.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#166534" text-anchor="start">1 endpoint = node primary · LoadBalancer pool primary</text>
+<text x="60.0" y="310.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="normal" fill="#475569" text-anchor="start">mariadb-cluster-secondary</text>
+<text x="320.0" y="310.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">các node còn lại (đọc)</text>
+<text x="60.0" y="332.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="normal" fill="#475569" text-anchor="start">mariadb-cluster</text>
+<text x="320.0" y="332.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">mọi node</text>
+<rect x="820.0" y="160.0" width="320.0" height="140.0" rx="10" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2"/>
+<text x="836.0" y="184.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="start">Service OpenStack</text>
+<text x="836.0" y="206.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">connection = mysql+pymysql://…@</text>
+<text x="836.0" y="224.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12" font-weight="bold" fill="#0F172A" text-anchor="start">mariadb-cluster-primary.openstack.svc</text>
+<text x="836.0" y="248.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">→ luôn ghi vào một node duy nhất,</text>
+<text x="836.0" y="268.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">tránh xung đột certification.</text>
+<text x="836.0" y="288.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#991B1B" text-anchor="start">Đổi primary → lỗi DB vài giây.</text>
+<path d="M818,244 L425,244 L425,240" fill="none" stroke="#16A34A" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="40.0" y="380.0" width="550.0" height="200.0" rx="14" fill="#FCFAFF" stroke="#9333EA" stroke-width="2"/>
+<text x="60.0" y="410.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="bold" fill="#0F172A" text-anchor="start">RabbitMQ · cluster operator</text>
+<rect x="60.0" y="428.0" width="160.0" height="62.0" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="1.6"/>
+<text x="72.0" y="452.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#0F172A" text-anchor="start">rabbitmq-server-0</text>
+<text x="72.0" y="474.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">PVC 20 GiB</text>
+<rect x="232.0" y="428.0" width="160.0" height="62.0" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="1.6"/>
+<text x="244.0" y="452.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#0F172A" text-anchor="start">rabbitmq-server-1</text>
+<text x="244.0" y="474.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">PVC 20 GiB</text>
+<rect x="404.0" y="428.0" width="160.0" height="62.0" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="1.6"/>
+<text x="416.0" y="452.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#0F172A" text-anchor="start">rabbitmq-server-2</text>
+<text x="416.0" y="474.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">PVC 20 GiB</text>
+<text x="60.0" y="516.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">Service rabbitmq · port 5672 (AMQP), 15672 (UI)</text>
+<text x="60.0" y="538.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">messaging-topology-operator tạo vhost/user cho</text>
+<text x="60.0" y="558.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">từng service OpenStack qua CRD</text>
+<rect x="610.0" y="380.0" width="550.0" height="200.0" rx="14" fill="#F8FAFC" stroke="#64748B" stroke-width="2"/>
+<text x="630.0" y="410.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="bold" fill="#0F172A" text-anchor="start">memcached · Helm chart</text>
+<rect x="630.0" y="428.0" width="160.0" height="62.0" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.6"/>
+<text x="642.0" y="452.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#0F172A" text-anchor="start">memcached-0</text>
+<text x="642.0" y="474.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">không có PVC</text>
+<rect x="802.0" y="428.0" width="160.0" height="62.0" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.6"/>
+<text x="814.0" y="452.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#0F172A" text-anchor="start">memcached-1</text>
+<text x="814.0" y="474.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">không có PVC</text>
+<rect x="974.0" y="428.0" width="160.0" height="62.0" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.6"/>
+<text x="986.0" y="452.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="bold" fill="#0F172A" text-anchor="start">memcached-2</text>
+<text x="986.0" y="474.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">không có PVC</text>
+<text x="630.0" y="516.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">Service memcached · port 11211</text>
+<text x="630.0" y="538.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">Cache token Keystone và dữ liệu API.</text>
+<text x="630.0" y="558.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">Mất cache chỉ làm chậm, không mất dữ liệu.</text>
+<text x="40.0" y="630.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">Ba dịch vụ đều đặt mỗi replica trên một controller khác nhau (anti-affinity) – mất một controller vẫn còn 2/3 replica, đủ quorum cho Galera và RabbitMQ.</text>
+<text x="40.0" y="656.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#475569" text-anchor="start">Dữ liệu của MariaDB và RabbitMQ nằm trên Longhorn, nên phần 4b phải cài Longhorn trước.</text>
+</svg>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="710" viewBox="0 0 1200 710" role="img" aria-label="Topology lab Genestack">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1200" height="710" fill="#FFFFFF"/>
+<text x="40.0" y="52.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="bold" fill="#0F172A" text-anchor="start">Topology lab Genestack</text>
+<text x="40.0" y="80.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#475569" text-anchor="start">6 VM trên một OpenStack cloud · 3 network · chỉ deployer có floating IP</text>
+<rect x="247.5" y="104.0" width="140.0" height="44.0" rx="22" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="317.5" y="132.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="middle">Internet</text>
+<line x1="317.5" y1="150" x2="317.5" y2="192" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<text x="329.5" y="176.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="start">router-1 + floating IP (SSH)</text>
+<rect x="250.0" y="200.0" width="135.0" height="104.0" rx="12" fill="#E2E8F0" stroke="#64748B" stroke-width="2"/>
+<text x="317.5" y="234.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">deployer</text>
+<text x="317.5" y="260.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">2 vCPU · 6 GB</text>
+<text x="317.5" y="282.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">Ansible · helm</text>
+<rect x="405.0" y="200.0" width="135.0" height="104.0" rx="12" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+<text x="472.5" y="234.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">controller-1</text>
+<text x="472.5" y="260.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">8 vCPU · 16 GB</text>
+<text x="472.5" y="282.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">control plane</text>
+<rect x="560.0" y="200.0" width="135.0" height="104.0" rx="12" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+<text x="627.5" y="234.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">controller-2</text>
+<text x="627.5" y="260.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">8 vCPU · 16 GB</text>
+<text x="627.5" y="282.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">control plane</text>
+<rect x="715.0" y="200.0" width="135.0" height="104.0" rx="12" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+<text x="782.5" y="234.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">controller-3</text>
+<text x="782.5" y="260.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">8 vCPU · 16 GB</text>
+<text x="782.5" y="282.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">control plane</text>
+<rect x="870.0" y="200.0" width="135.0" height="104.0" rx="12" fill="#F3E8FF" stroke="#9333EA" stroke-width="2"/>
+<text x="937.5" y="234.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">compute-1</text>
+<text x="937.5" y="260.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">8 vCPU · 16 GB</text>
+<text x="937.5" y="282.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">nova-compute</text>
+<rect x="1025.0" y="200.0" width="135.0" height="104.0" rx="12" fill="#F3E8FF" stroke="#9333EA" stroke-width="2"/>
+<text x="1092.5" y="234.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">compute-2</text>
+<text x="1092.5" y="260.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">8 vCPU · 16 GB</text>
+<text x="1092.5" y="282.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">nova-compute</text>
+<line x1="40" y1="400" x2="1160" y2="400" stroke="#2563EB" stroke-width="7" stroke-linecap="round"/>
+<text x="40.0" y="350.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="bold" fill="#1E40AF" text-anchor="start">br-host</text>
+<text x="40.0" y="369.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="start">10.0.0.0/24 · enp3s0</text>
+<text x="40.0" y="387.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#1E40AF" text-anchor="start">port security: BẬT</text>
+<line x1="40" y1="490" x2="1160" y2="490" stroke="#0D9488" stroke-width="7" stroke-linecap="round"/>
+<text x="40.0" y="440.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="bold" fill="#115E59" text-anchor="start">br-overlay</text>
+<text x="40.0" y="459.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="start">192.168.1.0/24 · enp10s0</text>
+<text x="40.0" y="477.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#115E59" text-anchor="start">port security: TẮT</text>
+<line x1="40" y1="580" x2="1160" y2="580" stroke="#D97706" stroke-width="7" stroke-linecap="round"/>
+<text x="40.0" y="530.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="16" font-weight="bold" fill="#92400E" text-anchor="start">br-ex</text>
+<text x="40.0" y="549.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="start">192.168.10.0/24 · enp11s0</text>
+<text x="40.0" y="567.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#92400E" text-anchor="start">port security: TẮT</text>
+<line x1="317.5" y1="304" x2="317.5" y2="400" stroke="#2563EB" stroke-width="2.2"/>
+<circle cx="317.5" cy="400" r="5.5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.4"/>
+<line x1="456.5" y1="304" x2="456.5" y2="400" stroke="#2563EB" stroke-width="2.2"/>
+<circle cx="456.5" cy="400" r="5.5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.4"/>
+<line x1="472.5" y1="304" x2="472.5" y2="490" stroke="#0D9488" stroke-width="2.2"/>
+<circle cx="472.5" cy="490" r="5.5" fill="#FFFFFF" stroke="#0D9488" stroke-width="2.4"/>
+<line x1="488.5" y1="304" x2="488.5" y2="580" stroke="#D97706" stroke-width="2.2"/>
+<circle cx="488.5" cy="580" r="5.5" fill="#FFFFFF" stroke="#D97706" stroke-width="2.4"/>
+<line x1="611.5" y1="304" x2="611.5" y2="400" stroke="#2563EB" stroke-width="2.2"/>
+<circle cx="611.5" cy="400" r="5.5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.4"/>
+<line x1="627.5" y1="304" x2="627.5" y2="490" stroke="#0D9488" stroke-width="2.2"/>
+<circle cx="627.5" cy="490" r="5.5" fill="#FFFFFF" stroke="#0D9488" stroke-width="2.4"/>
+<line x1="643.5" y1="304" x2="643.5" y2="580" stroke="#D97706" stroke-width="2.2"/>
+<circle cx="643.5" cy="580" r="5.5" fill="#FFFFFF" stroke="#D97706" stroke-width="2.4"/>
+<line x1="766.5" y1="304" x2="766.5" y2="400" stroke="#2563EB" stroke-width="2.2"/>
+<circle cx="766.5" cy="400" r="5.5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.4"/>
+<line x1="782.5" y1="304" x2="782.5" y2="490" stroke="#0D9488" stroke-width="2.2"/>
+<circle cx="782.5" cy="490" r="5.5" fill="#FFFFFF" stroke="#0D9488" stroke-width="2.4"/>
+<line x1="798.5" y1="304" x2="798.5" y2="580" stroke="#D97706" stroke-width="2.2"/>
+<circle cx="798.5" cy="580" r="5.5" fill="#FFFFFF" stroke="#D97706" stroke-width="2.4"/>
+<line x1="921.5" y1="304" x2="921.5" y2="400" stroke="#2563EB" stroke-width="2.2"/>
+<circle cx="921.5" cy="400" r="5.5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.4"/>
+<line x1="937.5" y1="304" x2="937.5" y2="490" stroke="#0D9488" stroke-width="2.2"/>
+<circle cx="937.5" cy="490" r="5.5" fill="#FFFFFF" stroke="#0D9488" stroke-width="2.4"/>
+<line x1="953.5" y1="304" x2="953.5" y2="580" stroke="#D97706" stroke-width="2.2"/>
+<circle cx="953.5" cy="580" r="5.5" fill="#FFFFFF" stroke="#D97706" stroke-width="2.4"/>
+<line x1="1076.5" y1="304" x2="1076.5" y2="400" stroke="#2563EB" stroke-width="2.2"/>
+<circle cx="1076.5" cy="400" r="5.5" fill="#FFFFFF" stroke="#2563EB" stroke-width="2.4"/>
+<line x1="1092.5" y1="304" x2="1092.5" y2="490" stroke="#0D9488" stroke-width="2.2"/>
+<circle cx="1092.5" cy="490" r="5.5" fill="#FFFFFF" stroke="#0D9488" stroke-width="2.4"/>
+<line x1="1108.5" y1="304" x2="1108.5" y2="580" stroke="#D97706" stroke-width="2.2"/>
+<circle cx="1108.5" cy="580" r="5.5" fill="#FFFFFF" stroke="#D97706" stroke-width="2.4"/>
+<rect x="40.0" y="620.0" width="1120.0" height="64.0" rx="12" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+<text x="60.0" y="646.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">Dành riêng trên br-host cho MetalLB (không cấp qua DHCP):</text>
+<text x="60.0" y="670.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="normal" fill="#1E40AF" text-anchor="start">10.0.0.200/32 → Envoy Gateway (mọi API)   ·   10.0.0.208/28 → MariaDB, RabbitMQ</text>
+</svg>
