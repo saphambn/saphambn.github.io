@@ -8,7 +8,7 @@ render_with_liquid: false
 
 Cloud chạy được một thời gian thì sẽ có lúc cần thêm chỗ cho VM. Với Genestack, thêm compute node gồm hai phần: đưa máy vào **cluster Kubernetes**, rồi để **OpenStack** nhận nó làm hypervisor. Phần lớn được tự động hoá bằng DaemonSet, việc của người vận hành là làm đúng các bước và đúng thứ tự.
 
-Bài này thêm `openstack-compute-3` (`10.0.0.129`) vào lab của series, bám theo tài liệu `docs/adding-new-node.md` của Genestack và bổ sung những bước còn thiếu.
+Bài này thêm `openstack-compute-3` (`10.0.0.129`) vào lab của series.
 
 ![Thêm compute node: Kubernetes, OpenStack, HA và kiểm tra](/assets/img/genestack/09-add-compute-flow.svg)
 
