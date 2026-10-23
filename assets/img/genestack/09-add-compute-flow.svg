@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="Thêm một compute node vào cụm Genestack">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1200" height="720" fill="#FFFFFF"/>
+<text x="40.0" y="52.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="bold" fill="#0F172A" text-anchor="start">Thêm một compute node vào cụm Genestack</text>
+<text x="40.0" y="80.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#475569" text-anchor="start">Điều kiện trước: NIC của node mới mang cùng tên với các node đang chạy (enp10s0, enp11s0)</text>
+<rect x="40.0" y="110.0" width="360.0" height="420.0" rx="14" fill="#FAFAFA" stroke="#2563EB" stroke-width="2"/>
+<rect x="40.0" y="110.0" width="360.0" height="44.0" rx="14" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+<text x="56.0" y="139.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E40AF" text-anchor="start">Kubernetes</text>
+<rect x="54.0" y="174.0" width="332.0" height="160.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.4"/>
+<circle cx="80" cy="206" r="15" fill="#2563EB"/>
+<text x="80.0" y="211.5" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="104.0" y="211.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">Inventory +</text>
+<text x="104.0" y="231.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">host-setup</text>
+<text x="68.0" y="266.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">kube_node,</text>
+<text x="68.0" y="286.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">openstack_compute_nodes</text>
+<rect x="54.0" y="350.0" width="332.0" height="160.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.4"/>
+<circle cx="80" cy="382" r="15" fill="#2563EB"/>
+<text x="80.0" y="387.5" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="104.0" y="387.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">Kubespray</text>
+<text x="104.0" y="407.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">scale.yml</text>
+<text x="68.0" y="442.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">facts.yml trước · --limit</text>
+<text x="68.0" y="462.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">node mới</text>
+<rect x="420.0" y="110.0" width="360.0" height="420.0" rx="14" fill="#FAFAFA" stroke="#DC2626" stroke-width="2"/>
+<rect x="420.0" y="110.0" width="360.0" height="44.0" rx="14" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+<text x="436.0" y="139.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#991B1B" text-anchor="start">OpenStack</text>
+<rect x="434.0" y="174.0" width="332.0" height="160.0" rx="10" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.4"/>
+<circle cx="460" cy="206" r="15" fill="#DC2626"/>
+<text x="460.0" y="211.5" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="484.0" y="211.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">Annotate rồi mới</text>
+<text x="484.0" y="231.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">label</text>
+<text x="448.0" y="266.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">ovn.openstack.org/* →</text>
+<text x="448.0" y="286.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">network/compute</text>
+<rect x="434.0" y="350.0" width="332.0" height="160.0" rx="10" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.4"/>
+<circle cx="460" cy="382" r="15" fill="#DC2626"/>
+<text x="460.0" y="387.5" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF" text-anchor="middle">4</text>
+<text x="484.0" y="387.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">Đăng ký với Nova</text>
+<text x="448.0" y="442.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">nova-cell-setup · hypervisor</text>
+<text x="448.0" y="462.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">up</text>
+<line x1="402.0" y1="320.0" x2="417.0" y2="320.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="800.0" y="110.0" width="360.0" height="420.0" rx="14" fill="#FAFAFA" stroke="#16A34A" stroke-width="2"/>
+<rect x="800.0" y="110.0" width="360.0" height="44.0" rx="14" fill="#DCFCE7" stroke="#16A34A" stroke-width="2"/>
+<text x="816.0" y="139.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#166534" text-anchor="start">HA &amp; kiểm tra</text>
+<rect x="814.0" y="174.0" width="332.0" height="160.0" rx="10" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.4"/>
+<circle cx="840" cy="206" r="15" fill="#16A34A"/>
+<text x="840.0" y="211.5" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF" text-anchor="middle">5</text>
+<text x="864.0" y="211.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">Masakari segment</text>
+<text x="828.0" y="266.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">thêm host vào compute-ha</text>
+<rect x="814.0" y="350.0" width="332.0" height="160.0" rx="10" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.4"/>
+<circle cx="840" cy="382" r="15" fill="#16A34A"/>
+<text x="840.0" y="387.5" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF" text-anchor="middle">6</text>
+<text x="864.0" y="387.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" text-anchor="start">VM thử nghiệm</text>
+<text x="828.0" y="442.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">boot trên node mới · gắn</text>
+<text x="828.0" y="462.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#475569" text-anchor="start">volume</text>
+<line x1="782.0" y1="320.0" x2="797.0" y2="320.0" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<text x="40.0" y="548.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#475569" text-anchor="start">Trạng thái node trong Kubernetes</text>
+<rect x="40.0" y="560.0" width="360.0" height="40.0" rx="8" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.4"/>
+<text x="220.0" y="586.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#1E40AF" text-anchor="middle">Ready sau scale.yml (kube-ovn tự chạy)</text>
+<rect x="420.0" y="560.0" width="740.0" height="40.0" rx="8" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.4"/>
+<text x="790.0" y="586.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#166534" text-anchor="middle">nova-compute, libvirt, metadata agent, masakari monitor chạy</text>
+<text x="40.0" y="650.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">Bước 3 sai thứ tự (label trước annotation) → ovn-setup cấu hình node với annotation rỗng rồi đánh dấu configured.</text>
+<text x="40.0" y="676.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="normal" fill="#475569" text-anchor="start">Gỡ label ovn.openstack.org/configured để DaemonSet chạy lại trên node đó.</text>
+</svg>
