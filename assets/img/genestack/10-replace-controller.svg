@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="712" viewBox="0 0 1200 712" role="img" aria-label="Thay controller: thêm trước, bớt sau">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1200" height="712" fill="#FFFFFF"/>
+<text x="40.0" y="52.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="bold" fill="#0F172A" text-anchor="start">Thay controller: thêm trước, bớt sau</text>
+<text x="40.0" y="80.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#475569" text-anchor="start">Số thành viên của từng cụm qua các giai đoạn · không lúc nào để mất đa số</text>
+<rect x="264.0" y="110.0" width="142.0" height="62.0" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.4"/>
+<text x="335.0" y="136.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="middle">0 · Kiểm tra</text>
+<text x="335.0" y="156.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="middle">&amp; backup</text>
+<rect x="414.0" y="110.0" width="142.0" height="62.0" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.4"/>
+<text x="485.0" y="136.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="middle">1 · Chuẩn bị</text>
+<text x="485.0" y="156.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="middle">controller-4</text>
+<rect x="564.0" y="110.0" width="142.0" height="62.0" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.4"/>
+<text x="635.0" y="136.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="middle">2 · Thêm vào</text>
+<text x="635.0" y="156.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="middle">etcd + K8s</text>
+<rect x="714.0" y="110.0" width="142.0" height="62.0" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.4"/>
+<text x="785.0" y="136.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="middle">3 · Thêm vào</text>
+<text x="785.0" y="156.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="middle">hạ tầng &amp; OpenStack</text>
+<rect x="864.0" y="110.0" width="142.0" height="62.0" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.4"/>
+<text x="935.0" y="136.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="middle">4 · Rút khỏi</text>
+<text x="935.0" y="156.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="middle">node cũ</text>
+<rect x="1014.0" y="110.0" width="142.0" height="62.0" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.4"/>
+<text x="1085.0" y="136.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="middle">5 · Gỡ</text>
+<text x="1085.0" y="156.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0F172A" text-anchor="middle">node cũ</text>
+<text x="40.0" y="236.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E40AF" text-anchor="start">etcd</text>
+<rect x="264.0" y="208.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.2"/>
+<text x="335.0" y="236.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="414.0" y="208.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.2"/>
+<text x="485.0" y="236.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="564.0" y="208.0" width="142.0" height="56.0" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+<text x="635.0" y="232.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">4</text>
+<text x="635.0" y="254.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E40AF" text-anchor="middle">+c4</text>
+<rect x="714.0" y="208.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.2"/>
+<text x="785.0" y="236.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">4</text>
+<rect x="864.0" y="208.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.2"/>
+<text x="935.0" y="236.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">4</text>
+<rect x="1014.0" y="208.0" width="142.0" height="56.0" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+<text x="1085.0" y="232.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<text x="1085.0" y="254.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E40AF" text-anchor="middle">−cũ</text>
+<text x="40.0" y="312.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#115E59" text-anchor="start">OVN NB/SB (Raft)</text>
+<rect x="264.0" y="284.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.2"/>
+<text x="335.0" y="312.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="414.0" y="284.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.2"/>
+<text x="485.0" y="312.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="564.0" y="284.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.2"/>
+<text x="635.0" y="312.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="714.0" y="284.0" width="142.0" height="56.0" rx="10" fill="#CCFBF1" stroke="#0D9488" stroke-width="2"/>
+<text x="785.0" y="308.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">4</text>
+<text x="785.0" y="330.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#115E59" text-anchor="middle">+c4</text>
+<rect x="864.0" y="284.0" width="142.0" height="56.0" rx="10" fill="#CCFBF1" stroke="#0D9488" stroke-width="2"/>
+<text x="935.0" y="308.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<text x="935.0" y="330.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#115E59" text-anchor="middle">kick cũ</text>
+<rect x="1014.0" y="284.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.2"/>
+<text x="1085.0" y="312.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<text x="40.0" y="388.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#991B1B" text-anchor="start">Galera · RabbitMQ</text>
+<rect x="264.0" y="360.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.2"/>
+<text x="335.0" y="388.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="414.0" y="360.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.2"/>
+<text x="485.0" y="388.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="564.0" y="360.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.2"/>
+<text x="635.0" y="388.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="714.0" y="360.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.2"/>
+<text x="785.0" y="388.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="864.0" y="360.0" width="142.0" height="56.0" rx="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+<text x="935.0" y="384.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<text x="935.0" y="406.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#991B1B" text-anchor="middle">pod sang c4</text>
+<rect x="1014.0" y="360.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.2"/>
+<text x="1085.0" y="388.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<text x="40.0" y="464.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#6B21A8" text-anchor="start">Longhorn storage node</text>
+<rect x="264.0" y="436.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#9333EA" stroke-width="1.2"/>
+<text x="335.0" y="464.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="414.0" y="436.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#9333EA" stroke-width="1.2"/>
+<text x="485.0" y="464.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="564.0" y="436.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#9333EA" stroke-width="1.2"/>
+<text x="635.0" y="464.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="714.0" y="436.0" width="142.0" height="56.0" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="2"/>
+<text x="785.0" y="460.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">4</text>
+<text x="785.0" y="482.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#6B21A8" text-anchor="middle">+c4</text>
+<rect x="864.0" y="436.0" width="142.0" height="56.0" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="2"/>
+<text x="935.0" y="460.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="bold" fill="#0F172A" text-anchor="middle">4→3</text>
+<text x="935.0" y="482.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#6B21A8" text-anchor="middle">evict cũ</text>
+<rect x="1014.0" y="436.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#9333EA" stroke-width="1.2"/>
+<text x="1085.0" y="464.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<text x="40.0" y="540.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#92400E" text-anchor="start">cinder-volume (LVM)</text>
+<rect x="264.0" y="512.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#D97706" stroke-width="1.2"/>
+<text x="335.0" y="540.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="414.0" y="512.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#D97706" stroke-width="1.2"/>
+<text x="485.0" y="540.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="564.0" y="512.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#D97706" stroke-width="1.2"/>
+<text x="635.0" y="540.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="714.0" y="512.0" width="142.0" height="56.0" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+<text x="785.0" y="536.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">4</text>
+<text x="785.0" y="558.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#92400E" text-anchor="middle">+c4</text>
+<rect x="864.0" y="512.0" width="142.0" height="56.0" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+<text x="935.0" y="536.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="bold" fill="#0F172A" text-anchor="middle">4→3</text>
+<text x="935.0" y="558.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#92400E" text-anchor="middle">migrate volume</text>
+<rect x="1014.0" y="512.0" width="142.0" height="56.0" rx="10" fill="#FFFFFF" stroke="#D97706" stroke-width="1.2"/>
+<text x="1085.0" y="540.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" fill="#0F172A" text-anchor="middle">3</text>
+<rect x="40.0" y="598.0" width="1120.0" height="92.0" rx="12" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+<text x="60.0" y="628.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="start">Quy tắc: mỗi lần chỉ thay đổi một cụm, chờ nó ổn định (đủ thành viên, đồng bộ) rồi mới làm cụm tiếp theo.</text>
+<text x="60.0" y="654.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="start">etcd và OVN tạm có 4 thành viên: vẫn chịu được mất 1 node như khi có 3 – nhưng chỉ nên giữ trạng thái này trong lúc thao tác.</text>
+<text x="60.0" y="676.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#475569" text-anchor="start">Galera và RabbitMQ giữ nguyên 3 pod: chỉ chuyển pod của node cũ sang controller-4, từng pod một.</text>
+</svg>
