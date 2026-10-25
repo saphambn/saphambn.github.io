@@ -1,6 +1,6 @@
 ---
 title: "OpenStack trên Kubernetes với Genestack – Phần 9: Thay thế một controller node"
-date: 2026-10-21 08:10:00 +0700
+date: 2026-10-25 10:30:00 +0700
 categories: [OpenStack, Genestack]
 tags: [openstack, kubernetes, genestack, kubespray, etcd, ovn, galera, longhorn, operations]
 render_with_liquid: false
