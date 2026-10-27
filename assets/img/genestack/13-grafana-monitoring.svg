@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-label="Luồng metric trong Genestack: exporter và OpenTelemetry collector đưa metric vào Prometheus, Grafana đọc từ Prometheus và lưu cấu hình trong MariaDB riêng">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<style>text{font-family:'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;fill:#0F172A}.t{font-size:26px;font-weight:bold}.s{font-size:15px;fill:#475569}.h{font-size:15px;font-weight:bold}.b{font-size:14px;font-weight:bold}.n{font-size:13px;fill:#334155}.m{font-size:12.5px;fill:#475569;font-family:Consolas, 'DejaVu Sans Mono', monospace}</style>
+<rect width="1200" height="640" fill="#FFFFFF"/>
+<text x="40" y="52" class="t">Monitoring trong Genestack 2026.2</text>
+<text x="40" y="80" class="s">Metric vào Prometheus theo hai đường: scrape qua ServiceMonitor và remote write từ OpenTelemetry. Grafana chỉ đọc</text>
+
+<!-- Sources -->
+<rect x="40" y="108" width="360" height="500" rx="12" fill="#F8FAFC" stroke="#64748B" stroke-width="1.4"/>
+<text x="60" y="136" class="h">Nguồn metric</text>
+
+<rect x="60" y="150" width="320" height="104" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.4"/>
+<text x="78" y="174" class="b">kube-prometheus-stack (Phần 4a)</text>
+<text x="78" y="196" class="n">• Prometheus, Alertmanager, operator</text>
+<text x="78" y="216" class="n">• kubelet/cAdvisor qua ServiceMonitor</text>
+<text x="78" y="238" class="m">node-exporter, KSM: tắt ở đây</text>
+
+<rect x="60" y="270" width="320" height="140" rx="10" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.4"/>
+<text x="78" y="294" class="b">OTel collector daemon (mỗi node)</text>
+<text x="78" y="316" class="n">• node-exporter (chart con), etcd</text>
+<text x="78" y="336" class="n">• libvirt exporter trên compute</text>
+<text x="78" y="356" class="n">• pod có annotation prometheus.io/scrape</text>
+<text x="78" y="378" class="n">• log container, log OpenStack → Loki</text>
+<text x="78" y="398" class="m">opentelemetry-kube-stack</text>
+
+<rect x="60" y="426" width="320" height="166" rx="10" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.4"/>
+<text x="78" y="450" class="b">OTel collector deployment (1 pod)</text>
+<text x="78" y="472" class="n">• mysql → MariaDB Galera của OpenStack</text>
+<text x="78" y="492" class="n">• rabbitmq (management API :15672)</text>
+<text x="78" y="512" class="n">• memcached</text>
+<text x="78" y="532" class="n">• kube-state-metrics, kube-ovn, Envoy,</text>
+<text x="78" y="552" class="n">  MetalLB, kube-proxy, CoreDNS…</text>
+<text x="78" y="576" class="m">user monitoring (MariaDB, RabbitMQ)</text>
+
+<!-- Prometheus -->
+<rect x="470" y="200" width="270" height="150" rx="12" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.4"/>
+<text x="490" y="228" class="h" fill="#6D28D9">Prometheus</text>
+<text x="490" y="250" class="m">kube-prometheus-stack-</text>
+<text x="490" y="268" class="m">prometheus:9090</text>
+<text x="490" y="294" class="n">enableRemoteWriteReceiver: true</text>
+<text x="490" y="314" class="n">ns monitoring</text>
+<text x="490" y="334" class="n">Skyline cũng đọc metric từ đây</text>
+
+<rect x="470" y="380" width="270" height="70" rx="10" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="490" y="408" class="b">Loki · Tempo</text>
+<text x="490" y="430" class="n">datasource có sẵn, cài sau</text>
+
+<path d="M380,202 L466,250" stroke="#2563EB" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
+<text x="398" y="196" class="m">scrape</text>
+<path d="M380,330 L466,300" stroke="#16A34A" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
+<path d="M380,500 L466,320" stroke="#16A34A" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
+<text x="402" y="384" class="m" transform="rotate(-62 402 384)">remote write</text>
+<path d="M380,370 L466,412" stroke="#16A34A" stroke-width="1.4" fill="none" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+
+<!-- Grafana -->
+<rect x="820" y="108" width="340" height="500" rx="12" fill="#F8FAFC" stroke="#64748B" stroke-width="1.4"/>
+<text x="840" y="136" class="h">Grafana (Phần 12)</text>
+
+<rect x="840" y="150" width="300" height="74" rx="10" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="858" y="174" class="b">Envoy Gateway flex-gateway</text>
+<text x="858" y="194" class="m">listener grafana-https</text>
+<text x="858" y="212" class="m">10.0.0.200:443</text>
+
+<rect x="840" y="250" width="300" height="160" rx="10" fill="#FFEDD5" stroke="#EA580C" stroke-width="1.4"/>
+<text x="858" y="274" class="b">Deployment grafana</text>
+<text x="858" y="294" class="n">chart 10.1.0 · image 12.2.0</text>
+<text x="858" y="314" class="n">PVC RWX trên general (plugin)</text>
+<text x="858" y="340" class="n">Datasource:</text>
+<text x="858" y="360" class="m">Prometheus  uid=prometheus</text>
+<text x="858" y="378" class="m">Loki        uid=loki</text>
+<text x="858" y="396" class="m">Tempo       uid=tempo</text>
+
+<rect x="840" y="436" width="300" height="84" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="1.4"/>
+<text x="858" y="460" class="b">MariaDB mariadb-cluster</text>
+<text x="858" y="480" class="n">ns monitoring · 1 replica · DB grafana</text>
+<text x="858" y="500" class="n">user, dashboard, datasource, alert</text>
+
+<rect x="840" y="540" width="300" height="52" rx="10" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="858" y="562" class="b">Deployer: script import</text>
+<text x="858" y="580" class="m">POST /api/dashboards/import</text>
+
+<path d="M990,224 L990,246" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
+<path d="M990,410 L990,432" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
+<path d="M1150,566 L1158,566 L1158,330 L1144,330" stroke="#334155" stroke-width="1.4" fill="none" marker-end="url(#arr)"/>
+<path d="M836,330 L744,290" stroke="#EA580C" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
+<text x="752" y="276" class="m">PromQL</text>
+<path d="M836,380 L744,412" stroke="#EA580C" stroke-width="1.4" fill="none" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+</svg>
