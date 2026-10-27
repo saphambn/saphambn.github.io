@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690" role="img" aria-label="Octavia trong Genestack: control plane trên controller, amphora trên compute, nối nhau qua lb-mgmt-net">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<style>text{font-family:'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;fill:#0F172A}.t{font-size:26px;font-weight:bold}.s{font-size:15px;fill:#475569}.h{font-size:15px;font-weight:bold}.b{font-size:14px;font-weight:bold}.n{font-size:13px;fill:#334155}.m{font-size:12.5px;fill:#475569;font-family:Consolas, 'DejaVu Sans Mono', monospace}</style>
+<rect width="1200" height="690" fill="#FFFFFF"/>
+<text x="40" y="52" class="t">Octavia trong Genestack</text>
+<text x="40" y="80" class="s">Control plane chạy trên controller · amphora là VM trên compute · hai bên gặp nhau trên lb-mgmt-net</text>
+
+<!-- Controller -->
+<rect x="40" y="108" width="440" height="404" rx="12" fill="#F8FAFC" stroke="#64748B" stroke-width="1.4"/>
+<text x="60" y="136" class="h" fill="#1E40AF">openstack-controller-1 / 3 / 4</text>
+
+<rect x="62" y="152" width="396" height="72" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.4"/>
+<text x="80" y="178" class="b">octavia-api  (Deployment, HPA 2–6)</text>
+<text x="80" y="200" class="n">+ sidecar octavia-driver-agent cho provider OVN</text>
+<text x="80" y="216" class="m">→ OVN NB qua Service ovn-nb (provider ovn)</text>
+
+<rect x="62" y="236" width="396" height="44" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.2"/>
+<text x="80" y="263" class="b">octavia-housekeeping  (Deployment)</text>
+
+<rect x="62" y="294" width="190" height="84" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.4"/>
+<text x="157" y="320" class="b" text-anchor="middle">octavia-worker</text>
+<text x="157" y="340" class="n" text-anchor="middle">DaemonSet · hostNetwork</text>
+<text x="157" y="362" class="m" text-anchor="middle">o-w0</text>
+
+<rect x="268" y="294" width="190" height="84" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.4"/>
+<text x="363" y="320" class="b" text-anchor="middle">health-manager</text>
+<text x="363" y="340" class="n" text-anchor="middle">DaemonSet · hostNetwork</text>
+<text x="363" y="362" class="m" text-anchor="middle">o-hm0 · UDP 5555</text>
+
+<line x1="157" y1="378" x2="157" y2="430" stroke="#334155" stroke-width="1.6"/>
+<line x1="363" y1="378" x2="363" y2="430" stroke="#334155" stroke-width="1.6"/>
+<rect x="62" y="430" width="396" height="44" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.2"/>
+<text x="260" y="457" class="b" text-anchor="middle">br-int  (OVS do kube-ovn quản lý)</text>
+<text x="260" y="498" class="n" text-anchor="middle">o-w0 / o-hm0 = port Neutron tạo sẵn với --host=&lt;controller&gt;</text>
+
+<!-- Compute -->
+<rect x="640" y="108" width="520" height="404" rx="12" fill="#F8FAFC" stroke="#64748B" stroke-width="1.4"/>
+<text x="660" y="136" class="h" fill="#047857">openstack-compute-N  (QEMU)</text>
+
+<rect x="662" y="152" width="476" height="226" rx="10" fill="#D1FAE5" stroke="#059669" stroke-width="1.4"/>
+<text x="680" y="178" class="b">Amphora  (VM của project admin, flavor m1.amphora)</text>
+<text x="680" y="206" class="n">• haproxy: nhận traffic ở VIP, chia cho member</text>
+<text x="680" y="230" class="n">• amphora-agent: REST API ở TCP 9443, xác thực hai chiều (mTLS)</text>
+<text x="680" y="254" class="n">• gửi heartbeat UDP 5555 tới mọi health-manager</text>
+<rect x="680" y="280" width="200" height="40" rx="8" fill="#FFFFFF" stroke="#059669" stroke-width="1.2"/>
+<text x="780" y="305" class="m" text-anchor="middle">eth0 · lb-mgmt-net</text>
+<rect x="920" y="280" width="200" height="40" rx="8" fill="#FFFFFF" stroke="#059669" stroke-width="1.2"/>
+<text x="1020" y="305" class="m" text-anchor="middle">eth1 · mạng tenant (VIP)</text>
+<text x="680" y="352" class="n">ACTIVE_STANDBY: 2 amphora / LB, anti-affinity · SINGLE: 1 amphora</text>
+
+<rect x="662" y="394" width="476" height="96" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="1.2"/>
+<text x="680" y="420" class="b">Provider ovn: không có VM nào</text>
+<text x="680" y="444" class="n">LB là bản ghi Load_Balancer trong OVN NB. ovn-controller trên</text>
+<text x="680" y="464" class="n">mọi node tự DNAT VIP → member ngay trong OVS. Chỉ L4.</text>
+
+<line x1="780" y1="320" x2="780" y2="560" stroke="#334155" stroke-width="1.6"/>
+<line x1="260" y1="474" x2="260" y2="560" stroke="#334155" stroke-width="1.6"/>
+
+<!-- lb-mgmt-net -->
+<rect x="40" y="560" width="1120" height="52" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="1.4"/>
+<text x="60" y="592" class="b">lb-mgmt-net  ·  geneve  ·  172.16.29.0/24, không gateway</text>
+<line x1="560" y1="586" x2="700" y2="586" stroke="#334155" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="630" y="579" class="m" text-anchor="middle">TCP 9443</text>
+<line x1="1020" y1="586" x2="880" y2="586" stroke="#334155" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="950" y="579" class="m" text-anchor="middle">UDP 5555</text>
+<text x="40" y="646" class="n">worker → amphora: cấu hình haproxy qua TCP 9443 · amphora → health-manager: heartbeat UDP 5555. Mất một trong hai chiều là LB kẹt PENDING hoặc bị failover liên tục.</text>
+</svg>

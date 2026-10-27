@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-label="Magnum với driver Cluster API: Magnum trong cluster Genestack, management cluster chạy CAPI, workload cluster của người dùng">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<style>text{font-family:'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;fill:#0F172A}.t{font-size:26px;font-weight:bold}.s{font-size:15px;fill:#475569}.h{font-size:15px;font-weight:bold}.b{font-size:14px;font-weight:bold}.n{font-size:13px;fill:#334155}.m{font-size:12.5px;fill:#475569;font-family:Consolas, 'DejaVu Sans Mono', monospace}</style>
+<rect width="1200" height="660" fill="#FFFFFF"/>
+<text x="40" y="52" class="t">Magnum với driver Cluster API</text>
+<text x="40" y="80" class="s">Magnum không tự dựng Kubernetes: nó cài một Helm release lên management cluster, và CAPI làm phần còn lại</text>
+
+<!-- Genestack -->
+<rect x="40" y="108" width="330" height="330" rx="12" fill="#F8FAFC" stroke="#64748B" stroke-width="1.4"/>
+<text x="60" y="136" class="h" fill="#1E40AF">① Cluster Genestack</text>
+<rect x="60" y="152" width="290" height="56" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.4"/>
+<text x="80" y="176" class="b">magnum-api</text>
+<text x="80" y="196" class="n">Deployment, HPA</text>
+<rect x="60" y="220" width="290" height="140" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.4"/>
+<text x="80" y="244" class="b">magnum-conductor</text>
+<text x="80" y="264" class="n">StatefulSet · driver magnum-capi-helm</text>
+<text x="80" y="290" class="m">/etc/magnum/kubeconfig.conf</text>
+<text x="80" y="310" class="n">→ trỏ tới management cluster</text>
+<text x="80" y="336" class="m">helm upgrade --install</text>
+<text x="80" y="352" class="m">  openstack-cluster</text>
+<text x="60" y="392" class="n">Tạo app credential cho mỗi cluster,</text>
+<text x="60" y="410" class="n">ghi clouds.yaml + CA vào Secret</text>
+
+<!-- Management -->
+<rect x="430" y="108" width="340" height="330" rx="12" fill="#F8FAFC" stroke="#64748B" stroke-width="1.4"/>
+<text x="450" y="136" class="h" fill="#7C3AED">② Management cluster</text>
+<text x="450" y="156" class="n">Lab: cluster Genestack · Production: 3 VM riêng</text>
+<rect x="450" y="170" width="300" height="160" rx="10" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.4"/>
+<text x="468" y="194" class="b">Cluster API</text>
+<text x="468" y="216" class="n">• capi-controller-manager</text>
+<text x="468" y="236" class="n">• CAPO (provider OpenStack)</text>
+<text x="468" y="256" class="n">• kubeadm bootstrap / control-plane</text>
+<text x="468" y="276" class="n">• ORC (OpenStack Resource Controller)</text>
+<text x="468" y="296" class="n">• cluster-api-addon-provider</text>
+<text x="468" y="318" class="m">ns magnum-&lt;project-id&gt;</text>
+<rect x="450" y="344" width="300" height="40" rx="8" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.2"/>
+<text x="600" y="369" class="m" text-anchor="middle">(B) LB Octavia :6443, VIP trên public</text>
+<text x="450" y="410" class="n">A: clusterctl init trên cluster Genestack</text>
+<text x="450" y="428" class="n">B: playbook capi-mgmt-cluster-main.yaml</text>
+
+<!-- Workload -->
+<rect x="830" y="108" width="330" height="330" rx="12" fill="#F8FAFC" stroke="#64748B" stroke-width="1.4"/>
+<text x="850" y="136" class="h" fill="#047857">③ Workload cluster</text>
+<text x="850" y="156" class="n">VM trong project của người dùng</text>
+<rect x="850" y="170" width="290" height="44" rx="10" fill="#D1FAE5" stroke="#059669" stroke-width="1.2"/>
+<text x="995" y="197" class="b" text-anchor="middle">LB API :6443 + floating IP</text>
+<rect x="850" y="224" width="140" height="56" rx="10" fill="#D1FAE5" stroke="#059669" stroke-width="1.2"/>
+<text x="920" y="248" class="b" text-anchor="middle">control-plane</text>
+<text x="920" y="268" class="n" text-anchor="middle">--master-count</text>
+<rect x="1000" y="224" width="140" height="56" rx="10" fill="#D1FAE5" stroke="#059669" stroke-width="1.2"/>
+<text x="1070" y="248" class="b" text-anchor="middle">worker</text>
+<text x="1070" y="268" class="n" text-anchor="middle">--node-count</text>
+<rect x="850" y="292" width="290" height="92" rx="10" fill="#FFFFFF" stroke="#059669" stroke-width="1.2"/>
+<text x="868" y="316" class="b">Addon do addon-provider cài</text>
+<text x="868" y="338" class="n">CNI (Calico/Cilium) · OpenStack CCM</text>
+<text x="868" y="358" class="n">Cinder CSI · (tuỳ chọn) monitoring</text>
+<text x="850" y="410" class="n">Image phải có thuộc tính</text>
+<text x="850" y="428" class="m">os_distro, kube_version</text>
+
+<line x1="370" y1="290" x2="428" y2="290" stroke="#334155" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="399" y="280" class="m" text-anchor="middle">Helm</text>
+<line x1="770" y1="250" x2="828" y2="250" stroke="#334155" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="799" y="240" class="m" text-anchor="middle">kubeadm</text>
+
+<!-- API bar -->
+<line x1="205" y1="438" x2="205" y2="510" stroke="#334155" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="600" y1="438" x2="600" y2="510" stroke="#334155" stroke-width="1.6" marker-end="url(#arr)"/>
+<line x1="995" y1="438" x2="995" y2="510" stroke="#334155" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="215" y="478" class="m">app credential</text>
+<text x="610" y="478" class="m">CAPO: VM, network, LB, volume</text>
+<text x="1005" y="478" class="m">CCM, CSI</text>
+<rect x="40" y="512" width="1120" height="56" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="1.4"/>
+<text x="60" y="538" class="b">Endpoint public của OpenStack · https://*.api.openstack.example.com · Envoy Gateway 10.0.0.200</text>
+<text x="60" y="558" class="n">Mọi bên đều gọi API qua đây: DNS phải phân giải được, đường mạng phải tới được, và chứng chỉ phải được tin cậy.</text>
+<text x="40" y="606" class="n">Magnum chỉ theo dõi trạng thái các object CAPI trên management cluster. VM, LB và volume của workload cluster do CAPO tạo bằng app credential của chính người dùng.</text>
+</svg>
