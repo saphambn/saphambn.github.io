@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="744" viewBox="0 0 1200 744" role="img" aria-label="Nâng cấp Genestack 2026.2.0.2 lên 2026.3.1: ba nơi quyết định version, và các giai đoạn nâng cấp từ backup tới kiểm tra">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<style>text{font-family:'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;fill:#0F172A}.t{font-size:26px;font-weight:bold}.s{font-size:15px;fill:#475569}.h{font-size:15px;font-weight:bold}.b{font-size:14px;font-weight:bold}.n{font-size:13px;fill:#334155}.m{font-size:12.5px;fill:#475569;font-family:Consolas, 'DejaVu Sans Mono', monospace}.w{font-size:13px;font-weight:bold;fill:#B91C1C}.p{font-size:14px;font-weight:bold;fill:#FFFFFF}</style>
+<rect width="1200" height="744" fill="#FFFFFF"/>
+<text x="40" y="52" class="t">Nâng cấp Genestack 2026.2.0.2 → 2026.3.1</text>
+<text x="40" y="80" class="s">OpenStack 2025.1 (Epoxy) → 2026.1 (Gazpacho). Hạ tầng (kube-ovn, Longhorn, MariaDB, Envoy…) giữ nguyên chart, chỉ nâng lớp OpenStack</text>
+
+<!-- Left: version sources -->
+<rect x="40" y="108" width="420" height="604" rx="12" fill="#F8FAFC" stroke="#64748B" stroke-width="1.4"/>
+<text x="60" y="136" class="h">Ba nơi quyết định version</text>
+
+<rect x="60" y="152" width="380" height="104" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.4"/>
+<text x="78" y="176" class="b">① /opt/genestack (git tag)</text>
+<text x="78" y="198" class="n">• install-*.sh, bin/services/*.yaml, playbook</text>
+<text x="78" y="218" class="n">• base-helm-configs: image tag 2026.1-latest</text>
+<text x="78" y="242" class="m">đổi ngay khi git checkout</text>
+
+<rect x="60" y="272" width="380" height="104" rx="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.6"/>
+<text x="78" y="296" class="b">② /etc/genestack/helm-chart-versions.yaml</text>
+<text x="78" y="318" class="n">• bootstrap.sh chỉ copy một lần</text>
+<text x="78" y="338" class="n">• chart nova 2025.1.19 → 2026.1.8 …</text>
+<text x="78" y="362" class="w">KHÔNG tự đổi: phải cập nhật bằng tay</text>
+
+<rect x="60" y="392" width="380" height="124" rx="10" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.4"/>
+<text x="78" y="416" class="b">③ Secret trong namespace openstack</text>
+<text x="78" y="438" class="n">• installer tạo secret còn thiếu, không ghi đè</text>
+<text x="78" y="458" class="n">• secret mới mang ý nghĩa với dữ liệu cũ:</text>
+<text x="78" y="478" class="m">octavia-heartbeat-key</text>
+<text x="78" y="498" class="m">barbican-simple-crypto-kek</text>
+<text x="290" y="488" class="n">→ tạo trước</text>
+
+<rect x="60" y="604" width="380" height="88" rx="10" fill="#FFFFFF" stroke="#334155" stroke-width="1.4"/>
+<text x="78" y="628" class="b">install-&lt;service&gt;.sh</text>
+<text x="78" y="650" class="m">helm upgrade --install --version ②</text>
+<text x="78" y="668" class="m">  -f base ① -f global -f /etc/genestack</text>
+<text x="78" y="686" class="m">  --set &lt;mật khẩu từ ③&gt;</text>
+
+<path d="M250,516 L250,600" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
+<path d="M50,204 L50,648 L56,648" stroke="#2563EB" stroke-width="1.4" fill="none" marker-end="url(#arr)"/>
+<path d="M446,324 L452,324 L452,636 L444,636" stroke="#DC2626" stroke-width="1.4" fill="none" marker-end="url(#arr)"/>
+
+<!-- Right: phases -->
+<rect x="500" y="108" width="660" height="604" rx="12" fill="#F8FAFC" stroke="#64748B" stroke-width="1.4"/>
+<text x="520" y="136" class="h">Các giai đoạn (làm bằng tay, từ deployer)</text>
+
+<rect x="520" y="152" width="34" height="34" rx="17" fill="#475569"/><text x="531" y="174" class="p">0</text>
+<text x="568" y="166" class="b">Kiểm tra sức khoẻ và backup</text>
+<text x="568" y="184" class="n">online_data_migrations trên bản cũ · dump MariaDB · Secret · /etc/genestack</text>
+
+<rect x="520" y="202" width="34" height="34" rx="17" fill="#2563EB"/><text x="531" y="224" class="p">1</text>
+<text x="568" y="216" class="b">git checkout release-2026.3.1 + submodule</text>
+<text x="568" y="234" class="n">Xoá cache chart trong /etc/genestack/kustomize</text>
+
+<rect x="520" y="252" width="34" height="34" rx="17" fill="#DC2626"/><text x="531" y="274" class="p">2</text>
+<text x="568" y="266" class="b">Cập nhật helm-chart-versions.yaml</text>
+<text x="568" y="284" class="n">Trước bước này, không chạy bất kỳ install-*.sh nào</text>
+
+<rect x="520" y="302" width="34" height="34" rx="17" fill="#16A34A"/><text x="531" y="324" class="p">3</text>
+<text x="568" y="316" class="b">Giữ nguyên khoá cũ</text>
+<text x="568" y="334" class="n">Octavia heartbeat key = giá trị đang chạy · Barbican KEK: --adopt</text>
+
+<rect x="520" y="352" width="34" height="34" rx="17" fill="#7C3AED"/><text x="531" y="374" class="p">4</text>
+<text x="568" y="366" class="b">Nâng từng service, xong cái này mới sang cái kia</text>
+<text x="568" y="384" class="m">xoá hook job → install-&lt;svc&gt;.sh → kiểm tra</text>
+
+<rect x="568" y="398" width="96" height="30" rx="6" fill="#EDE9FE" stroke="#7C3AED"/><text x="582" y="418" class="n">memcached</text>
+<rect x="672" y="398" width="82" height="30" rx="6" fill="#EDE9FE" stroke="#7C3AED"/><text x="687" y="418" class="n">keystone</text>
+<rect x="762" y="398" width="82" height="30" rx="6" fill="#EDE9FE" stroke="#7C3AED"/><text x="776" y="418" class="n">barbican</text>
+<rect x="852" y="398" width="70" height="30" rx="6" fill="#EDE9FE" stroke="#7C3AED"/><text x="866" y="418" class="n">glance</text>
+<rect x="930" y="398" width="86" height="30" rx="6" fill="#EDE9FE" stroke="#7C3AED"/><text x="942" y="418" class="n">placement</text>
+
+<rect x="560" y="438" width="544" height="96" rx="8" fill="#FEF3C7" stroke="#D97706" stroke-width="1.2" stroke-dasharray="6 4"/>
+<rect x="568" y="446" width="70" height="30" rx="6" fill="#EDE9FE" stroke="#7C3AED"/><text x="584" y="466" class="n">libvirt</text>
+<rect x="646" y="446" width="56" height="30" rx="6" fill="#EDE9FE" stroke="#7C3AED"/><text x="660" y="466" class="n">nova</text>
+<rect x="710" y="446" width="72" height="30" rx="6" fill="#EDE9FE" stroke="#7C3AED"/><text x="722" y="466" class="n">neutron</text>
+<rect x="790" y="446" width="140" height="30" rx="6" fill="#EDE9FE" stroke="#7C3AED"/><text x="800" y="466" class="n">cinder + playbook</text>
+<rect x="938" y="446" width="72" height="30" rx="6" fill="#EDE9FE" stroke="#7C3AED"/><text x="951" y="466" class="n">octavia</text>
+<rect x="1018" y="446" width="76" height="30" rx="6" fill="#EDE9FE" stroke="#7C3AED"/><text x="1030" y="466" class="n">magnum</text>
+<text x="572" y="510" class="m">Masakari: các host on_maintenance=True</text>
+<text x="572" y="526" class="m">từ libvirt tới hết masakari</text>
+<rect x="1014" y="494" width="80" height="30" rx="6" fill="#EDE9FE" stroke="#7C3AED"/><text x="1024" y="514" class="n">masakari</text>
+<rect x="1026" y="542" width="68" height="30" rx="6" fill="#EDE9FE" stroke="#7C3AED"/><text x="1038" y="562" class="n">skyline</text>
+<text x="568" y="562" class="n">Chạy liên tục: ping FIP của VM thử, theo dõi amphora</text>
+
+<rect x="520" y="590" width="34" height="34" rx="17" fill="#0F766E"/><text x="531" y="612" class="p">5</text>
+<text x="568" y="604" class="b">Kiểm tra sau nâng cấp</text>
+<text x="568" y="622" class="n">Không còn image 2025.1 · nova-status · service list · VM, volume, LB, secret</text>
+
+<rect x="568" y="640" width="572" height="56" rx="8" fill="#FFFFFF" stroke="#334155" stroke-width="1.2"/>
+<text x="584" y="662" class="b">Rollback không chỉ là helm rollback</text>
+<text x="584" y="682" class="n">db-sync đổi schema một chiều: quay lại = restore dump + chart/tag cũ</text>
+</svg>
