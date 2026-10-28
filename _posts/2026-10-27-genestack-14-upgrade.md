@@ -520,13 +520,40 @@ os segment host list compute-ha -c name -c on_maintenance
 os notification list --sort-key created_at --sort-dir desc --limit 5   # không có notification mới
 ```
 
+Chart Skyline không đổi version, nhưng image của các job đổi sang `openstack-client:2026.1-latest`. Nhân tiện lần chạy lại này, bật menu cho Octavia và Magnum đã cài ở Phần 10 và 11. Base override của Genestack (`/opt/genestack/base-helm-configs/skyline/skyline-helm-overrides.yaml`) đặt hai cờ cha thành `false`:
+
+```yaml
+conf:
+  skyline:
+    features:
+      network_load_balancers: false    # ẩn Network → Load Balancers
+      container: false                 # ẩn cả nhóm Container Infra
+      container_clusters: true
+      container_cluster_templates: true
+```
+
+`container` quyết định cả nhóm menu. `container_clusters` và `container_cluster_templates` chỉ là các trang con, nên cờ cha đang `false` thì chúng có `true` cũng không hiện. Service vẫn có trong catalog và `service_mapping` mặc định của Skyline vẫn có `container-infra: magnum`, nhưng giao diện không có lối vào. Thêm phần `features` dưới khoá `conf.skyline` đang có trong override của mình:
+
+```yaml
+# /etc/genestack/helm-configs/skyline/skyline-helm-overrides.yaml
+conf:
+  skyline:
+    features:
+      network_load_balancers: true
+      container: true
+```
+
+Helm gộp phần này với base override, nên các cờ khác giữ nguyên. Sau đó chạy:
+
 ```bash
 cleanjobs skyline
 /opt/genestack/bin/install-skyline.sh
 chk skyline
+kubectl -n openstack exec deploy/skyline -c skyline -- \
+  grep -E '^  (container|network_load_balancers):' /etc/skyline/skyline.yaml   # cả hai true
 ```
 
-Chart Skyline không đổi version, nhưng image của các job đổi sang `openstack-client:2026.1-latest`. Đăng nhập Skyline, mở danh sách instance, volume, load balancer để chắc mọi API đều trả lời.
+Đăng xuất rồi đăng nhập lại Skyline. Menu sẽ có thêm **Network → Load Balancers** và **Container Infra** (Clusters, Cluster Templates). Mở danh sách instance, volume, load balancer và cluster để chắc mọi API đều trả lời.
 
 Lab nào có cài thêm Heat thì nâng Heat theo cùng khuôn mẫu, ở bất kỳ lúc nào sau Keystone.
 
@@ -583,6 +610,7 @@ Vì vậy nên dừng ở từng bước kiểm tra. Phát hiện vấn đề ng
 | `barbican-api` CrashLoop, log `SimpleCrypto KEK is undefined` | Không có KEK nào được render | `helm rollback barbican`, chạy `rotate-barbican-kek.py --adopt`, cài lại |
 | Amphora chuyển `ERROR` và bị thay hàng loạt sau khi nâng Octavia | Heartbeat key mới khác khoá trong amphora | So Secret `octavia-heartbeat-key` với khoá cũ, sửa Secret và chạy lại `install-octavia.sh` |
 | `os volume service list` báo `cinder-volume` down | Virtualenv mới lỗi hoặc cấu hình trên host thiếu | `journalctl -u cinder-volume` trên storage node. Đường lui: dừng service, đổi tên `/opt/cinder-2025.1` về `/opt/cinder`, start lại |
+| Skyline không có menu Load Balancers hoặc Container Infra | Base override của Genestack đặt `network_load_balancers` và `container` là `false` | Bật hai cờ trong override của mình, chạy lại `install-skyline.sh` (xem mục 9) |
 | VM bị hard reboot trong lúc nâng compute | Host chưa ở chế độ bảo trì của Masakari | `os notification list`, bật `on_maintenance` trước khi làm tiếp |
 
 ## Việc nên làm sau nâng cấp
