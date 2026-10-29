@@ -173,6 +173,15 @@ Compute node cần iSCSI initiator để kết nối tới volume:
 
 Mỗi host có một iSCSI initiator name riêng trong `/etc/iscsi/initiatorname.iscsi`. Nếu các VM được tạo từ cùng một image, hãy kiểm tra tên này không bị trùng giữa các node.
 
+Trên image Ubuntu cloud, file này ban đầu chỉ có dòng `GenerateName=yes`. IQN thật chỉ được sinh ra (bởi `iscsi-init.service`) khi `iscsid` khởi động lần đầu. Nếu `iscsid` chưa từng chạy, nova-compute gửi connector không có initiator, và mọi thao tác gắn volume hoặc boot-from-volume đều lỗi `Connector doesn't have required information: initiator`. Kiểm tra trên từng compute trước khi đi tiếp:
+
+```bash
+systemctl is-active iscsid
+grep -v '^#' /etc/iscsi/initiatorname.iscsi    # phải là InitiatorName=iqn....
+# nếu vẫn là GenerateName=yes:
+systemctl enable --now iscsid.socket iscsid.service
+```
+
 ## Kiểm tra
 
 ```bash
@@ -239,6 +248,7 @@ Kết quả mong đợi:
 | Volume `error` ngay khi tạo, `No valid host was found` | Volume type có extra spec `volume_backend_name` khớp backend chưa; `cinder-volume` có `up` không |
 | Volume `error` khi tạo từ image | Log `cinder-volume` trên storage node; Glance có trả được dữ liệu image không |
 | Kẹt ở `attaching` | `iscsid` trên compute; compute có tới được `<storage-ip>:3260` không; log `nova-compute` |
+| `Connector doesn't have required information: initiator` | `/etc/iscsi/initiatorname.iscsi` trên compute vẫn là `GenerateName=yes`: bật `iscsid` (xem Bước 5) |
 | `tgtadm` không có target | `journalctl -u cinder-volume` trên storage node |
 
 ## Tóm tắt

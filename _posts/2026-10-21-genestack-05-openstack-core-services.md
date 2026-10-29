@@ -100,9 +100,11 @@ Khi `keystone-api` đã `Running`, Secret `keystone-keystone-admin` chứa thôn
 Cách nhanh nhất để có `openstack` CLI là chạy pod admin client, đã cấu hình sẵn từ Secret trên:
 
 ```bash
-kubectl apply -f /etc/genestack/manifests/utils/utils-openstack-client-admin.yaml
+kubectl -n openstack apply -f /etc/genestack/manifests/utils/utils-openstack-client-admin.yaml
 kubectl -n openstack exec -it openstack-admin-client -- openstack token issue
 ```
+
+Manifest không khai báo `namespace`, nên bắt buộc phải có `-n openstack`. Thiếu nó, pod sẽ rơi vào namespace `default` và không đọc được Secret `keystone-keystone-admin` trong `openstack`.
 
 Pod này là một `Pod` đơn lẻ, không do Deployment quản lý. Nếu node chứa nó bị tắt, pod sẽ không được tạo lại ở node khác, và bạn cần apply lại manifest trên.
 

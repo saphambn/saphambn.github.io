@@ -36,6 +36,14 @@ Kiểm tra: ba deployment `cert-manager`, `cert-manager-cainjector`, `cert-manag
 
 Các `ClusterIssuer` dùng cho gateway sẽ được tạo ở bước Envoy Gateway, nên lúc này chưa cần cấu hình gì thêm.
 
+> **cert-manager bị CrashLoopBackOff?** Override của Genestack bật `config.enableGatewayAPI: true`, nên controller `cert-manager` đòi CRD của Gateway API (`gateways.gateway.networking.k8s.io`…). Các CRD này đi kèm chart Envoy Gateway, cài ở cuối bài. Nếu cài cert-manager trên cluster trắng, pod `cert-manager` sẽ crash cho đến khi có CRD (`cainjector` và `webhook` vẫn chạy bình thường). Không cần làm gì khác: cài tiếp MetalLB và Envoy Gateway, rồi khởi động lại controller:
+>
+> ```bash
+> kubectl get crd gateways.gateway.networking.k8s.io
+> kubectl -n cert-manager rollout restart deploy/cert-manager
+> kubectl -n cert-manager wait --timeout=5m deploy/cert-manager --for=condition=available
+> ```
+
 ## MetalLB
 
 ### MetalLB giải quyết bài toán gì

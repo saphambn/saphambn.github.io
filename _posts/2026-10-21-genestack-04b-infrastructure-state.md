@@ -162,6 +162,15 @@ Hướng mọi thao tác ghi vào một node giúp tránh **xung đột certific
 
 ### Cài operator và cluster
 
+> **Kiểm tra overlay trước khi apply.** Upstream có hai cấu hình: `base` (`mariadb-replication.yaml`, replication bất đồng bộ 1 primary + replica, `wsrep_on=0`) và `galera`. Từ bản `release-2026.2.0.2`, overlay do bootstrap sinh ra trỏ vào **`../base`**, tức là **không phải Galera**. Muốn dựng Galera như bài này, sửa overlay (file này nằm trong `/etc/genestack`, không phải symlink, nên sửa thoải mái):
+>
+> ```bash
+> cat /etc/genestack/kustomize/mariadb-cluster/overlay/kustomization.yaml
+> sed -i 's#- \.\./base#- ../galera#' /etc/genestack/kustomize/mariadb-cluster/overlay/kustomization.yaml
+> ```
+>
+> Nếu lỡ apply với `base` rồi, không đổi tại chỗ được: khi cluster còn trống, xoá `mariadb mariadb-cluster` và các PVC `storage-mariadb-cluster-*` rồi apply lại.
+
 ```bash
 /opt/genestack/bin/install-mariadb-operator.sh
 kubectl -n mariadb-system wait --timeout=5m deploy/mariadb-operator-webhook --for=condition=available
@@ -170,7 +179,7 @@ kubectl -n openstack apply -k /etc/genestack/kustomize/mariadb-cluster/overlay
 
 Script cài hai chart: CRD (`mariadb-operator-crds`) và operator. Nếu webhook của operator không sẵn sàng sau một phút, script tự động của Genestack sẽ xoá các pod trong `mariadb-system` để chúng khởi động lại. Bạn có thể làm tương tự nếu gặp tình huống này.
 
-Overlay `mariadb-cluster/overlay` tham chiếu tới cấu hình `galera` của Genestack (đã giới thiệu ở Phần 1). Cluster trong lab có:
+Overlay `mariadb-cluster/overlay` (sau khi sửa) tham chiếu tới cấu hình `galera` của Genestack (đã giới thiệu ở Phần 1). Cluster trong lab có:
 
 - 3 replica, **anti-affinity bắt buộc**: mỗi node một pod, chỉ chạy trên node control-plane/worker;
 - mỗi pod một PVC 10 GiB trên StorageClass `general`;
