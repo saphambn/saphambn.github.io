@@ -376,9 +376,15 @@ Nếu máy client chưa phân giải được `designate.api.openstack.example.c
 Neutron gọi Designate để tạo bản ghi khi người dùng gán tên cho floating IP hoặc port. Chart Neutron tự xử lý phần thông tin đăng nhập khi `external_dns_driver: designate`:
 
 - Job `ks-user` tạo user `neutron_designate` trong project `service`, mật khẩu lấy từ Secret `designate-admin` (`install-neutron.sh` đã truyền sẵn).
-- Secret `neutron-ks-etc` có thêm file `neutron_designate.conf` chứa section `[designate]` (auth URL, user, mật khẩu). File này được nạp sau `neutron.conf`.
+- Secret `neutron-ks-etc` có thêm file `neutron_designate.conf` chứa section `[designate]` với user, project, mật khẩu. File này được nạp sau `neutron.conf`.
 
-Vì vậy override chỉ cần URL của Designate và các tuỳ chọn. Không cần chép mật khẩu vào file như tài liệu của Genestack.
+Vì vậy không cần chép mật khẩu vào override như tài liệu của Genestack. Nhưng **phải ghi rõ `auth_url` và `auth_type`**. File `neutron_designate.conf` không có hai khoá này. Khi `auth_url` để trống, template của chart tự điền vào đó **URL của Designate API** (`http://designate-api.openstack.svc.cluster.local:9001/`) thay vì URL của Keystone. Khi đó Neutron vẫn tạo được bản ghi A, vì bước này dùng token của người dùng. Nhưng bước đăng nhập bằng user `neutron_designate` hỏng, và lệnh trả về `500`. Log của `neutron-server` có dòng:
+
+```text
+keystoneauth1.exceptions.discovery.DiscoveryFailure: Cannot use v2 authentication with domain scope
+```
+
+Floating IP và bản ghi A vẫn được tạo dù lệnh báo lỗi. Hãy xoá chúng trước khi thử lại, nếu không lần sau sẽ gặp `A Floating IP record for fip1 ... already exists`.
 
 Tạo `/etc/genestack/helm-configs/neutron/neutron-designate-overrides.yaml`:
 
@@ -391,6 +397,9 @@ conf:
       dns_domain: gslab.internal.
       external_dns_driver: designate
     designate:
+      # Chart tự đặt auth_url = endpoint của Designate nếu để trống, nên phải ghi rõ Keystone
+      auth_type: password
+      auth_url: http://keystone-api.openstack.svc.cluster.local:5000/v3
       url: http://designate-api.openstack.svc.cluster.local:9001/v2
       allow_reverse_dns_lookup: true
       ipv4_ptr_zone_prefix_size: 24
@@ -414,6 +423,9 @@ Cài lại Neutron và kiểm tra cấu hình đã vào pod:
 /opt/genestack/bin/install-neutron.sh
 kubectl -n openstack exec deploy/neutron-server -c neutron-server -- \
   sh -c 'ls /etc/neutron/neutron.conf.d/; grep -v password /etc/neutron/neutron.conf.d/neutron_designate.conf'
+# auth_url phải là Keystone (:5000/v3), không phải designate-api
+kubectl -n openstack exec deploy/neutron-server -c neutron-server -- \
+  sh -c 'sed -n "/^\[designate\]/,/^\[/p" /etc/neutron/neutron.conf | grep -E "auth_(url|type)"'
 kubectl -n openstack exec deploy/neutron-server -c neutron-server -- \
   grep -E '^(external_dns_driver|dns_domain|extension_drivers)' /etc/neutron/neutron.conf /etc/neutron/plugins/ml2/ml2_conf.ini
 os user show neutron_designate --domain service -c name -c enabled
@@ -442,13 +454,25 @@ os server add floating ip vm-dns1 "$FIP"
 dig @10.0.0.53 vm-dns1.demo.gslab.example. +short
 ```
 
-**3. Fixed IP.** Bật `dns_publish_fixed_ip` trên subnet để publish cả IP riêng của VM:
+**3. Fixed IP.** Bật `dns_publish_fixed_ip` trên subnet để publish cả IP riêng của VM. Network vẫn phải có `dns_domain` như ở trường hợp 2. Neutron lấy zone từ `dns_domain` của port, hoặc của network nếu port không có:
 
 ```bash
+os network set test-net --dns-domain demo.gslab.example.   # nếu chưa làm ở trường hợp 2
 os subnet set test-subnet --dns-publish-fixed-ip
 os server create vm-dns2 --image "Cirros 0.6.2 64-bit" --flavor m1.tiny --network test-net --wait
+os port list --server vm-dns2 -c "DNS Assignment"
 dig @10.0.0.53 vm-dns2.demo.gslab.example. +short
 ```
+
+`DNS Assignment` phải là `vm-dns2.demo.gslab.example.`. Nếu nó là `vm-dns2.gslab.internal.`, thì network chưa có `dns_domain`. Tên đó lấy từ `dns_domain` mặc định của Neutron, chỉ dùng cho DNS nội bộ, và không bản ghi nào được tạo trong Designate.
+
+Neutron chỉ publish khi **tạo hoặc cập nhật port**. Đặt `dns_domain` cho network sau khi VM đã chạy không làm port cũ được publish. Với port đã có, đặt `dns_domain` trực tiếp lên port (cần extension driver `dns_domain_ports`):
+
+```bash
+os port set $(os port list --server vm-dns2 -c ID -f value) --dns-domain demo.gslab.example.
+```
+
+Bản ghi ngược của fixed IP nằm trong zone `0.16.172.in-addr.arpa.`, cũng được tạo tự động.
 
 Bản ghi ngược của floating IP nằm trong zone `10.168.192.in-addr.arpa.`:
 
@@ -654,4 +678,4 @@ Trên BIND9, các zone đã thêm bằng `rndc addzone` vẫn còn trong `_defau
 - Genestack không dựng DNS server. Tự cài BIND9 với `allow-new-zones yes`, key `rndc` riêng, `allow-notify` cho dải IP node.
 - Trên `release-2026.2.0.2` phải tự ghi đè: pool BIND9, mount `rndc.key`, `root_helper` mới, tắt cron job service cleaner, endpoint public.
 - Đưa mdns ra ngoài cluster bằng một Service `LoadBalancer` có IP cố định trong kustomize overlay.
-- Tích hợp Neutron chỉ cần `external_dns_driver`, URL của Designate và hai extension driver; chart tự tạo user `neutron_designate`.
+- Tích hợp Neutron cần `external_dns_driver`, URL của Designate, `auth_url` của Keystone (chart điền sai nếu để trống) và hai extension driver. Chart tự tạo user `neutron_designate` và mật khẩu.
