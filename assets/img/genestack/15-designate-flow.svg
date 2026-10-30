@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="760" viewBox="0 0 1300 760" role="img" aria-label="Luồng hoạt động của Designate với BIND9">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker><marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#D97706"/></marker><marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0D9488"/></marker></defs>
+<rect width="1300" height="760" fill="#FFFFFF"/>
+<text x="40" y="52" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="bold" fill="#0F172A" text-anchor="start">Designate với BIND9: tạo zone và bản ghi</text>
+<text x="40" y="80" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#475569" text-anchor="start">Designate (mdns) là primary của mọi zone · BIND9 là secondary, trả lời truy vấn DNS · số trên mũi tên là thứ tự các bước</text>
+<rect x="230" y="110" width="600" height="560" rx="14" fill="#F8FAFC" stroke="#64748B" stroke-width="1.4" stroke-dasharray="8 5"/>
+<text x="250" y="136" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#334155" text-anchor="start">Cluster Kubernetes của Genestack · namespace openstack</text>
+<rect x="30" y="160" width="170" height="80" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.4"/>
+<text x="115.0" y="195.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">Người dùng</text>
+<text x="115.0" y="217.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">CLI / Skyline / API</text>
+<rect x="30" y="300" width="170" height="90" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.4"/>
+<text x="115.0" y="330.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">neutron-server</text>
+<text x="115.0" y="352.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">port / floating IP</text>
+<text x="115.0" y="374.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">có dns_name</text>
+<rect x="260" y="160" width="210" height="80" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.4"/>
+<text x="365.0" y="195.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">designate-api</text>
+<text x="365.0" y="217.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">port 9001</text>
+<rect x="260" y="310" width="210" height="80" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.4"/>
+<text x="365.0" y="345.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">designate-central</text>
+<text x="365.0" y="367.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">ghi zone, recordset</text>
+<rect x="260" y="450" width="210" height="70" rx="10" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.4"/>
+<text x="365.0" y="490.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">MariaDB · RabbitMQ</text>
+<rect x="260" y="560" width="210" height="80" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.4"/>
+<text x="365.0" y="585.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">designate-producer</text>
+<text x="365.0" y="607.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">định kỳ: tăng serial,</text>
+<text x="365.0" y="629.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">dọn zone đã xoá</text>
+<rect x="580" y="200" width="220" height="110" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.4"/>
+<text x="690.0" y="230.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">designate-worker</text>
+<text x="690.0" y="252.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">chạy rndc qua</text>
+<text x="690.0" y="274.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">sudo designate-rootwrap</text>
+<text x="690.0" y="296.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">key: rndc-key-secret</text>
+<rect x="580" y="440" width="220" height="100" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.4"/>
+<text x="690.0" y="475.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">designate-mdns</text>
+<text x="690.0" y="497.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">primary của zone</text>
+<text x="690.0" y="519.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">NOTIFY · trả lời AXFR</text>
+<rect x="760" y="590" width="210" height="70" rx="10" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.4"/>
+<text x="865.0" y="620.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">Service LoadBalancer</text>
+<text x="865.0" y="642.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">10.0.0.215:5354</text>
+<rect x="1060" y="180" width="210" height="380" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="1.4"/>
+<text x="1165.0" y="295.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">BIND9</text>
+<text x="1165.0" y="317.0" font-family="'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">deployer · 10.0.0.53</text>
+<text x="1165.0" y="339.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle"></text>
+<text x="1165.0" y="361.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">zone type slave</text>
+<text x="1165.0" y="383.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">thêm bằng rndc addzone</text>
+<text x="1165.0" y="405.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">lưu trong _default.nzd</text>
+<text x="1165.0" y="427.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle"></text>
+<text x="1165.0" y="449.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">allow-new-zones yes</text>
+<text x="1165.0" y="471.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">allow-notify 10.0.0.0/24</text>
+<rect x="1060" y="640" width="210" height="80" rx="10" fill="#E2E8F0" stroke="#64748B" stroke-width="1.4"/>
+<text x="1165.0" y="675.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">Client DNS</text>
+<text x="1165.0" y="697.0" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="middle">VM, người dùng, Internet</text>
+<path d="M200,200 L258,200" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)"/>
+<circle cx="229" cy="186" r="11" fill="#334155"/>
+<text x="229" y="190.5" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">1</text>
+<path d="M200,330 C230,330 230,225 258,222" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)"/>
+<path d="M365,240 L365,308" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)"/>
+<circle cx="375" cy="276" r="11" fill="#334155"/>
+<text x="375" y="280.5" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="393" y="281" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#0F172A" text-anchor="start">RPC</text>
+<path d="M365,390 L365,448" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)"/>
+<text x="375" y="425" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#0F172A" text-anchor="start">lưu</text>
+<path d="M470,340 C530,340 530,270 578,265" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)"/>
+<circle cx="515" cy="346" r="11" fill="#334155"/>
+<text x="515" y="350.5" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="533" y="351" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#0F172A" text-anchor="start">RPC</text>
+<path d="M800,225 L1058,225" fill="none" stroke="#D97706" stroke-width="1.8" marker-end="url(#arrO)"/>
+<circle cx="845" cy="211" r="11" fill="#D97706"/>
+<text x="845" y="215.5" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">4</text>
+<text x="863" y="216" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#0F172A" text-anchor="start">rndc addzone · TCP 953</text>
+<path d="M1060,520 C1000,520 1000,625 972,625" fill="none" stroke="#0D9488" stroke-width="1.8" marker-end="url(#arrT)"/>
+<path d="M760,625 C700,625 700,560 702,542" fill="none" stroke="#0D9488" stroke-width="1.8" marker-end="url(#arrT)"/>
+<circle cx="790" cy="696" r="11" fill="#0D9488"/>
+<text x="790" y="700.5" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">5</text>
+<text x="808" y="701" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#0F172A" text-anchor="start">AXFR: BIND9 kéo zone qua VIP · TCP 5354</text>
+<path d="M800,470 C900,470 950,400 1058,400" fill="none" stroke="#D97706" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arrO)"/>
+<circle cx="815" cy="506" r="11" fill="#D97706"/>
+<text x="815" y="510.5" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">6</text>
+<text x="833" y="511" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#0F172A" text-anchor="start">NOTIFY khi có thay đổi · UDP 53</text>
+<path d="M800,280 L1058,280" fill="none" stroke="#D97706" stroke-width="1.8" marker-end="url(#arrO)"/>
+<circle cx="845" cy="266" r="11" fill="#D97706"/>
+<text x="845" y="270.5" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">7</text>
+<text x="863" y="271" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#0F172A" text-anchor="start">hỏi SOA, khớp serial → ACTIVE</text>
+<path d="M1165,640 L1165,562" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arr)"/>
+<circle cx="1150" cy="603" r="11" fill="#334155"/>
+<text x="1150" y="607.5" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">8</text>
+<text x="1132" y="608" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#0F172A" text-anchor="end">truy vấn · UDP/TCP 53</text>
+</svg>
