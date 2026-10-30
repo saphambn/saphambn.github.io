@@ -448,7 +448,7 @@ dig @10.0.0.53 fip1.demo.gslab.example. +short
 ```bash
 os network set test-net --dns-domain demo.gslab.example.
 os server create vm-dns1 --image "Cirros 0.6.2 64-bit" --flavor m1.tiny --network test-net --wait
-os port list --server vm-dns1 -c ID -c "DNS Name" -c "DNS Assignment"
+os port show $(os port list --server vm-dns1 -c ID -f value) -c dns_name -c dns_assignment
 FIP=$(os floating ip create public -f value -c floating_ip_address)
 os server add floating ip vm-dns1 "$FIP"
 dig @10.0.0.53 vm-dns1.demo.gslab.example. +short
@@ -460,11 +460,11 @@ dig @10.0.0.53 vm-dns1.demo.gslab.example. +short
 os network set test-net --dns-domain demo.gslab.example.   # nếu chưa làm ở trường hợp 2
 os subnet set test-subnet --dns-publish-fixed-ip
 os server create vm-dns2 --image "Cirros 0.6.2 64-bit" --flavor m1.tiny --network test-net --wait
-os port list --server vm-dns2 -c "DNS Assignment"
+os port show $(os port list --server vm-dns2 -c ID -f value) -c dns_assignment
 dig @10.0.0.53 vm-dns2.demo.gslab.example. +short
 ```
 
-`DNS Assignment` phải là `vm-dns2.demo.gslab.example.`. Nếu nó là `vm-dns2.gslab.internal.`, thì network chưa có `dns_domain`. Tên đó lấy từ `dns_domain` mặc định của Neutron, chỉ dùng cho DNS nội bộ, và không bản ghi nào được tạo trong Designate.
+`dns_assignment` phải là `vm-dns2.demo.gslab.example.`. Nếu nó là `vm-dns2.gslab.internal.`, thì network chưa có `dns_domain`. Tên đó lấy từ `dns_domain` mặc định của Neutron, chỉ dùng cho DNS nội bộ, và không bản ghi nào được tạo trong Designate.
 
 Neutron chỉ publish khi **tạo hoặc cập nhật port**. Đặt `dns_domain` cho network sau khi VM đã chạy không làm port cũ được publish. Với port đã có, đặt `dns_domain` trực tiếp lên port (cần extension driver `dns_domain_ports`):
 
