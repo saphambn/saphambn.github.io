@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Topology lab hai availability zone ở hai subnet khác nhau, nối bằng router">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker></defs>
+<rect width="1200" height="800" fill="#FFFFFF"/>
+<text x="40" y="52" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="bold" fill="#0F172A" text-anchor="start">gslab: hai AZ, hai bộ subnet, nối bằng L3</text>
+<text x="40" y="80" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="normal" fill="#475569" text-anchor="start">AZ2 không chung L2 với AZ1 · gslab-br-host và gslab-br-overlay đi qua router · gslab-br-ex mỗi AZ là một physnet riêng</text>
+<rect x="30" y="110" width="500" height="470" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+<rect x="730" y="110" width="440" height="470" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+<text x="50" y="140" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="bold" fill="#0F172A" text-anchor="start">AZ1 – site hiện có</text>
+<text x="750" y="140" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="bold" fill="#0F172A" text-anchor="start">AZ2 – site mới</text>
+<rect x="45" y="160" width="88" height="92" rx="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+<text x="89.0" y="186" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">controller-1</text>
+<text x="89.0" y="208" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">10.0.0.11</text>
+<text x="89.0" y="226" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">192.168.1.11</text>
+<text x="89.0" y="244" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#DC2626" text-anchor="middle">az1</text>
+<rect x="141" y="160" width="88" height="92" rx="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+<text x="185.0" y="186" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">controller-2</text>
+<text x="185.0" y="208" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">10.0.0.12</text>
+<text x="185.0" y="226" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">192.168.1.12</text>
+<text x="185.0" y="244" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#DC2626" text-anchor="middle">az1</text>
+<rect x="237" y="160" width="88" height="92" rx="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+<text x="281.0" y="186" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">controller-3</text>
+<text x="281.0" y="208" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">10.0.0.13</text>
+<text x="281.0" y="226" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">192.168.1.13</text>
+<text x="281.0" y="244" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#DC2626" text-anchor="middle">az1</text>
+<rect x="333" y="160" width="88" height="92" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="2"/>
+<text x="377.0" y="186" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">compute-1</text>
+<text x="377.0" y="208" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">10.0.0.21</text>
+<text x="377.0" y="226" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">192.168.1.21</text>
+<text x="377.0" y="244" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#9333EA" text-anchor="middle">az1</text>
+<rect x="429" y="160" width="88" height="92" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="2"/>
+<text x="473.0" y="186" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">compute-2</text>
+<text x="473.0" y="208" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">10.0.0.22</text>
+<text x="473.0" y="226" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">192.168.1.22</text>
+<text x="473.0" y="244" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#9333EA" text-anchor="middle">az1</text>
+<rect x="800" y="160" width="130" height="92" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="2"/>
+<text x="865" y="186" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">az2-compute-1</text>
+<text x="865" y="208" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">10.0.2.21</text>
+<text x="865" y="226" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">192.168.2.21</text>
+<text x="865" y="244" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#9333EA" text-anchor="middle">az2</text>
+<rect x="960" y="160" width="130" height="92" rx="10" fill="#F3E8FF" stroke="#9333EA" stroke-width="2"/>
+<text x="1025" y="186" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">az2-compute-2</text>
+<text x="1025" y="208" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">10.0.2.22</text>
+<text x="1025" y="226" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="middle">192.168.2.22</text>
+<text x="1025" y="244" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#9333EA" text-anchor="middle">az2</text>
+<line x1="45" y1="300" x2="515" y2="300" stroke="#2563EB" stroke-width="5"/>
+<text x="50" y="292" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#2563EB" text-anchor="start" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" paint-order="stroke">gslab-br-host</text>
+<text x="515" y="292" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="end" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" paint-order="stroke">10.0.0.0/24 · enp3s0 · gw .1</text>
+<line x1="45" y1="360" x2="515" y2="360" stroke="#0D9488" stroke-width="5"/>
+<text x="50" y="352" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#0D9488" text-anchor="start" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" paint-order="stroke">gslab-br-overlay</text>
+<text x="515" y="352" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="end" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" paint-order="stroke">192.168.1.0/24 · enp4s0 · rtr .1</text>
+<line x1="45" y1="420" x2="515" y2="420" stroke="#D97706" stroke-width="5"/>
+<text x="50" y="412" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#D97706" text-anchor="start" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" paint-order="stroke">gslab-br-ex</text>
+<text x="515" y="412" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="end" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" paint-order="stroke">192.168.10.0/24 · enp5s0 · physnet1</text>
+<line x1="745" y1="300" x2="1155" y2="300" stroke="#2563EB" stroke-width="5"/>
+<text x="750" y="292" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#2563EB" text-anchor="start" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" paint-order="stroke">gslab-br-host2</text>
+<text x="1155" y="292" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="end" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" paint-order="stroke">10.0.2.0/24 · enp3s0 · gw .1</text>
+<line x1="745" y1="360" x2="1155" y2="360" stroke="#0D9488" stroke-width="5"/>
+<text x="750" y="352" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#0D9488" text-anchor="start" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" paint-order="stroke">gslab-br-overlay2</text>
+<text x="1155" y="352" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="end" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" paint-order="stroke">192.168.2.0/24 · enp4s0 · rtr .1</text>
+<line x1="745" y1="420" x2="1155" y2="420" stroke="#D97706" stroke-width="5"/>
+<text x="750" y="412" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#D97706" text-anchor="start" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" paint-order="stroke">gslab-br-ex2</text>
+<text x="1155" y="412" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="end" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" paint-order="stroke">192.168.20.0/24 · enp5s0 · physnet2</text>
+<circle cx="89.0" cy="300" r="4" fill="#2563EB"/>
+<circle cx="89.0" cy="360" r="4" fill="#0D9488"/>
+<circle cx="89.0" cy="420" r="4" fill="#D97706"/>
+<line x1="89.0" y1="252" x2="89.0" y2="420" stroke="#94A3B8" stroke-width="1.2"/>
+<circle cx="185.0" cy="300" r="4" fill="#2563EB"/>
+<circle cx="185.0" cy="360" r="4" fill="#0D9488"/>
+<circle cx="185.0" cy="420" r="4" fill="#D97706"/>
+<line x1="185.0" y1="252" x2="185.0" y2="420" stroke="#94A3B8" stroke-width="1.2"/>
+<circle cx="281.0" cy="300" r="4" fill="#2563EB"/>
+<circle cx="281.0" cy="360" r="4" fill="#0D9488"/>
+<circle cx="281.0" cy="420" r="4" fill="#D97706"/>
+<line x1="281.0" y1="252" x2="281.0" y2="420" stroke="#94A3B8" stroke-width="1.2"/>
+<circle cx="377.0" cy="300" r="4" fill="#2563EB"/>
+<circle cx="377.0" cy="360" r="4" fill="#0D9488"/>
+<circle cx="377.0" cy="420" r="4" fill="#D97706"/>
+<line x1="377.0" y1="252" x2="377.0" y2="420" stroke="#94A3B8" stroke-width="1.2"/>
+<circle cx="473.0" cy="300" r="4" fill="#2563EB"/>
+<circle cx="473.0" cy="360" r="4" fill="#0D9488"/>
+<circle cx="473.0" cy="420" r="4" fill="#D97706"/>
+<line x1="473.0" y1="252" x2="473.0" y2="420" stroke="#94A3B8" stroke-width="1.2"/>
+<circle cx="865" cy="300" r="4" fill="#2563EB"/>
+<circle cx="865" cy="360" r="4" fill="#0D9488"/>
+<circle cx="865" cy="420" r="4" fill="#D97706"/>
+<line x1="865" y1="252" x2="865" y2="420" stroke="#94A3B8" stroke-width="1.2"/>
+<circle cx="1025" cy="300" r="4" fill="#2563EB"/>
+<circle cx="1025" cy="360" r="4" fill="#0D9488"/>
+<circle cx="1025" cy="420" r="4" fill="#D97706"/>
+<line x1="1025" y1="252" x2="1025" y2="420" stroke="#94A3B8" stroke-width="1.2"/>
+<rect x="565" y="282" width="130" height="40" rx="20" fill="#E2E8F0" stroke="#64748B" stroke-width="2"/>
+<text x="630" y="307" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A" text-anchor="middle">gslab-router</text>
+<line x1="515" y1="300" x2="565" y2="300" stroke="#2563EB" stroke-width="3"/>
+<line x1="695" y1="300" x2="745" y2="300" stroke="#2563EB" stroke-width="3"/>
+<line x1="630" y1="282" x2="630" y2="236" stroke="#334155" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="575" y="196" width="110" height="36" rx="18" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="630" y="219" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">Internet</text>
+<rect x="555" y="342" width="150" height="40" rx="20" fill="#E2E8F0" stroke="#64748B" stroke-width="2"/>
+<text x="630" y="367" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F172A" text-anchor="middle">gslab-router-overlay</text>
+<line x1="515" y1="360" x2="555" y2="360" stroke="#0D9488" stroke-width="3"/>
+<line x1="705" y1="360" x2="745" y2="360" stroke="#0D9488" stroke-width="3"/>
+<path d="M515,420 L548,420 L548,315 L570,315" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M745,420 L712,420 L712,315 L690,315" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="630" y="450" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="normal" fill="#475569" text-anchor="middle">gslab-br-ex, gslab-br-ex2: gw .1</text>
+<text x="630" y="465" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="normal" fill="#475569" text-anchor="middle">trên gslab-router (hai L2 riêng)</text>
+<text x="50" y="460" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">MetalLB L2: VIP 10.0.0.200, 10.0.0.208/28 chỉ trên</text>
+<text x="50" y="478" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">controller (cùng L2 với gslab-br-host). AZ2 tới VIP qua gslab-router.</text>
+<text x="50" y="506" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">Cinder LVM (iSCSI) trên controller · Cinder AZ az1</text>
+<text x="50" y="534" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">OVN gateway chassis: physnet1, availability-zones=az1</text>
+<text x="750" y="460" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">Không có control plane, không có VIP.</text>
+<text x="750" y="478" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">Volume iSCSI đi qua gslab-router về controller.</text>
+<text x="750" y="534" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="normal" fill="#475569" text-anchor="start">OVN gateway chassis: physnet2, availability-zones=az2</text>
+<path d="M300,560 C450,610 800,610 950,560" fill="none" stroke="#0D9488" stroke-width="2" stroke-dasharray="3 4" marker-end="url(#arr)" marker-start="url(#arr)"/>
+<text x="625" y="618" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="bold" fill="#0D9488" text-anchor="middle">Geneve (UDP 6081) giữa 192.168.1.x ↔ 192.168.2.x, định tuyến qua gslab-router-overlay</text>
+<rect x="30" y="640" width="1140" height="140" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+<text x="50" y="668" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="bold" fill="#0F172A" text-anchor="start">Lớp OpenStack</text>
+<text x="50" y="698" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="start">Nova</text>
+<text x="140" y="698" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="start">aggregate az1 (compute-1, compute-2)</text>
+<text x="750" y="698" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="start">aggregate az2 (az2-compute-1, az2-compute-2)</text>
+<text x="50" y="724" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="start">Neutron</text>
+<text x="140" y="724" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="start">public · flat physnet1 · test-router (hint az1)</text>
+<text x="750" y="724" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="start">public-az2 · flat physnet2 · router-az2 (hint az2)</text>
+<text x="50" y="750" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="start">Tenant</text>
+<text x="140" y="750" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="start">mạng Geneve dùng chung được cho cả hai AZ</text>
+<text x="750" y="750" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="normal" fill="#475569" text-anchor="start">VM ở AZ2 lấy floating IP từ public-az2</text>
+</svg>
